@@ -1,0 +1,48 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #100E0C;
+    color: #9E978D;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    filter: blur(0.25px);
+    margin: 1rem;
+}
+.userp{
+    margin-left: 3rem;
+    display: inline-block;
+    border-bottom: 1.5px dashed #9E978D;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+.userpd{
+    margin-left: 6rem;
+}
+.welcome{
+    font-size: 0.6rem;
+    font-weight: bold;
+    white-space: pre;
+    line-height: 0.3rem;
+    letter-spacing: 0px;
+}
+@media (max-width: 768px) 
+ {
+    body{
+        font-size: 0.7rem;
+        margin: 0.5rem;
+    }
+    .welcome{
+        font-size: 0.25rem;
+        font-weight: bolder;
+        line-height: 0.15rem;
+    }
+    .userp, .userpd{
+        margin-left: 0;
+    }
+ }
