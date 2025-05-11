@@ -42,7 +42,10 @@ body{
         font-weight: bolder;
         line-height: 0.15rem;
     }
-    .userp, .userpd{
+    .userp{
         margin-left: 0;
+    }
+    .userpd{
+        margin-left: 2rem;
     }
  }
