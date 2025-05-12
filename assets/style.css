@@ -20,7 +20,6 @@ body{
     align-items: center;
     background-color: #9E978D;
     font-weight: bolder;
-    filter: blur(0.5px);
 }
 .top_windows .ltext{
     width: 5%;
@@ -34,7 +33,6 @@ body{
     text-align: center;
     color: #bdb6aed7;
     font-size: 1.1rem;
-    filter: blur(0.1px);
 }
 .top_windows .rtext{
     width: 5%;
@@ -87,10 +85,10 @@ body{
 @media (max-width: 768px) 
  {
     .top_windows{
-        height: 2.5%;
+        height: 3.5%;
     }
     .wrapper{
-        height: 97.5%;
+        height: 96.5%;
         font-size: 0.7rem;
         border: 0.3rem solid #9E978D;
         /* border-top: 1rem solid #9E978D; */
