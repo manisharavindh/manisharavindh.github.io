@@ -1,4 +1,5 @@
-const wrapper = document.querySelector('.wrapper');
+const ls = document.querySelector('.loading_screen');
+// const wrapper = document.querySelector('.wrapper');
 
 function createEle(delay, element, content, classname){
     setTimeout(() => {
@@ -7,7 +8,7 @@ function createEle(delay, element, content, classname){
         if(classname){
             el.classList.add(classname);
         }
-        wrapper.appendChild(el);
+        ls.appendChild(el);
     }, delay);
 }
 
@@ -35,9 +36,13 @@ createEle(5500, 'p', "        #  #   # #       #       #     #  #     # #     # 
 createEle(5500, 'p', "         ##  ##  ####### #######  #####   ####### #     # #######    #     # #      # ### #     # #     # #     # ####### ######  #     #", "welcome")
 
 setTimeout(() => {
-    wrapper.innerHTML = '';
-}, 10000);
+    ls.remove();
+}, 7500);
 
-setTimeout(() => {
-    window.location.reload();
-}, 15000);
+function reload(){
+    location.reload();
+}
+
+// setTimeout(() => {
+//     ls.remove();
+// }, 1000);
