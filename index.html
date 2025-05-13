@@ -8,14 +8,37 @@
 </head>
 <body>
     <div class="top_windows">
-        <div class="ltext">_|</div>
-        <div class="ctext">Terminal</div>
-        <div class="rtext" onclick="reload()">X</div></div>
+        <div class="ltext" onclick="reload()">_|</div>
+        <div class="rtext" onclick="reload()">|_</div>
+    </div>
     <div class="wrapper">
         <div class="loading_screen"></div>
-        <p><<span>!</span>-- under construction! --></p>
+        <div class="tab-container">
+            <div class="tab-nav">
+                <div class="logo">»</div>
+                <button class="tab-button active" data-tab="tab1">home</button>
+                <button class="tab-button" data-tab="tab2">portfolio</button>
+                <button class="tab-button" data-tab="tab3">contact</button>
+                <button class="tab-button" data-tab="tab4">more</button>
+            </div>
+            
+            <div id="tab1" class="tab-content active">
+                <h2>Home</h2>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+                <h2>Portfolio</h2>
+            </div>
+            
+            <div id="tab3" class="tab-content">
+                <h2>Contact</h2>
+            </div>
+            
+            <div id="tab4" class="tab-content">
+                <h2>More</h2>
+            </div>
+        </div>
     </div>
-
     <script src="assets/main.js"></script>
 </body>
 </html>
