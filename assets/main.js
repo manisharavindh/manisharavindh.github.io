@@ -74,3 +74,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById("login").innerHTML = new Date().toTimeString();
+
+console.log(navigator);
