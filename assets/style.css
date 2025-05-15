@@ -1,229 +1,280 @@
 :root {
-    --primary: #100E0C;
-    --secondary: #9E978D;
-    --top-txt: #6d6260bb;
-    --border-size: 0.5rem;
-    --spacing-sm: 0.25rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 1rem;
+  --primary: #100E0C;
+  --secondary: #9E978D;
+  --top-txt: #6d6260bb;
+  --border-size: 0.5rem;
+  --spacing-sm: 0.25rem;
+  --spacing-md: 0.5rem;
+  --spacing-lg: 1rem;
 }
-  
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    user-select: none;
-    font-family: 'Courier New', Courier, monospace;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Courier New', Courier, monospace;
 }
 *:user-select {
-    user-select: none;
+  user-select: none;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  filter: contrast(125%) saturate(125%);
+  text-transform: lowercase;
 }
 
 body {
-    position: relative;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
 }
 
 .top_windows {
-    width: 100%;
-    height: min(3vh, 30px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--secondary);
-    font-weight: bolder;
+  width: 100%;
+  height: min(3vh, 30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary);
+  /* font-weight: bolder; */
 }
 
 .top_windows .ltext {
-    text-align: left;
-    color: var(--top-txt);
-    padding-left: var(--spacing-md);
-    cursor: pointer;
-    margin-bottom: 3px;
+  text-align: left;
+  color: var(--top-txt);
+  padding-left: var(--spacing-md);
+  cursor: pointer;
+  margin-bottom: 3px;
 }
 
 .top_windows .rtext {
-    text-align: right;
-    color: var(--top-txt);
-    padding-right: var(--spacing-md);
-    cursor: pointer;
-    margin-bottom: 3px;
+  text-align: right;
+  color: var(--top-txt);
+  padding-right: var(--spacing-md);
+  cursor: pointer;
+  margin-bottom: 3px;
 }
 
 .wrapper {
-    flex: 1;
-    width: 100%;
-    background-color: var(--primary);
-    color: var(--secondary);
-    border: var(--border-size) solid var(--secondary);
-    border-top: 0;
-    padding: var(--spacing-md);
-    position: relative;
-    overflow: auto;
+  flex: 1;
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: var(--border-size) solid var(--secondary);
+  border-top: 0;
+  padding: var(--spacing-md);
+  position: relative;
+  overflow: auto;
 }
 
 .loading_screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--primary);
-    height: 100%;
-    width: 100%;
-    padding: var(--spacing-md);
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  height: 100%;
+  width: 100%;
+  padding: var(--spacing-md);
+  z-index: 2;
+  text-transform: none;
 }
 
 .userp {
-    margin-left: 3rem;
-    display: inline-block;
-    border-bottom: 1.5px dashed rgba(158, 151, 141, 0.6);
-    padding-bottom: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+  margin-left: 3rem;
+  display: inline-block;
+  border-bottom: 1.5px dashed rgba(158, 151, 141, 0.6);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .userpd {
-    margin-left: 6rem;
+  margin-left: 6rem;
 }
 
 .welcome {
-    font-size: clamp(0.25rem, 2vw, 0.6rem);
-    font-weight: bold;
-    white-space: pre;
-    margin-bottom: 0.1rem;
-    letter-spacing: 1px;
+  font-size: clamp(0.25rem, 2vw, 0.6rem);
+  font-weight: bold;
+  white-space: pre;
+  margin-bottom: 0.05rem;
+  letter-spacing: 1px;
 }
 
 .tab-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .tab-nav {
-    display: flex;
-    padding: 0.25rem;
+  /* border: 1px solid red; */
+  display: flex;
+  padding: 0.25rem;
 }
 
 .tab-button {
-    border: none;
-    background: none;
-    color: var(--secondary);
-    font-size: clamp(0.7rem, 3vw, 1rem);
-    padding: var(--spacing-sm) var(--spacing-md);
-    cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--secondary);
+  font-size: clamp(0.7rem, 3vw, 1rem);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
 }
 .logo{
-    font-size: 1.5rem;
-    color: var(--secondary);
-    padding: var(--spacing-sm);
+  font-size: 1.5rem;
+  color: var(--secondary);
+  padding: var(--spacing-sm);
+  margin-top: -2px;
 }
 
 .tab-button:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+  /* letter-spacing: 0.5px; */
 }
 
 .tab-button.active {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
 }
 
 .tab-content {
-    display: none;
-    padding: var(--spacing-md);
-    flex: 1;
-    overflow-y: auto;
+  /* border: 1px solid red; */
+  display: none;
+  padding: var(--spacing-md);
+  flex: 1;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .tab-content.active {
-    display: block;
+  display: block;
 }
+
+.tab-nav2{
+  /* border: 1px solid red; */
+  /* border-top: 1.5px dashed rgba(158, 151, 141, 0.6); */
+  justify-content: end;
+  z-index: 2;
+}
+.logo2{
+  transform: rotate(180deg);
+  margin-bottom: -4px;
+}
+
+.tab-link {
+  position: relative;
+  display: inline-block;
+  border: none;
+  background: none;
+  color: var(--secondary);
+  font-size: clamp(0.7rem, 3vw, 1rem);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+}
+.tab-link:hover{
+  text-decoration: underline;
+}
+
+.heading{
+  display: inline-block;
+  width: auto;
+  border-bottom: 1.5px dashed rgba(158, 151, 141, 0.6);
+  margin-bottom: var(--spacing-sm);
+}
+/* .skill_list{
+  display: flex;
+} */
+.skill_list p{
+  margin-right: 0.5rem;
+  margin-bottom: 0.15rem;
+}
+
 
 /* Media queries */
 @media (max-width: 992px) {
-    :root {
-      --border-size: 0.4rem;
-    }
+  :root {
+    --border-size: 0.4rem;
+  }
 
-    .userpd {
-      margin-left: 4rem;
-    }
-    .logo{
-        font-size: 1.25rem;
-    }
+  .userpd {
+    margin-left: 4rem;
+  }
+  .logo{
+      font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 768px) {
-    :root {
-      --border-size: 0.3rem;
-      --spacing-md: 0.5rem;
-    }
+  :root {
+    --border-size: 0.3rem;
+    --spacing-md: 0.5rem;
+  }
 
-    .top_windows {
-      height: min(2.5vh, 25px);
-      font-size: 0.8rem;
-    }
+  .top_windows {
+    height: min(2.5vh, 25px);
+    font-size: 0.8rem;
+  }
 
-    .wrapper {
-      font-size: 1rem;
-    }
+  .wrapper {
+    font-size: 1rem;
+  }
 
-    .userp {
-      margin-left: 1.5rem;
-    }
+  .userp {
+    margin-left: 1.5rem;
+  }
 
-    .userpd {
-      margin-left: 3rem;
-    }
+  .userpd {
+    margin-left: 3rem;
+  }
 
-    .welcome{
-        font-size: 0.25rem;
-        font-weight: bolder;
-        line-height: 0.15rem;
-    }
-    .logo{
-        font-size: 1.25rem;
-    }
+  .welcome{
+      font-size: 0.25rem;
+      font-weight: bolder;
+      line-height: 0.1rem;
+  }
+  .logo{
+      font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 576px) {
-    :root {
-      --border-size: 0.25rem;
-      --spacing-sm: 0.25rem;
-      --spacing-md: 0.5rem;
-    }
+  :root {
+    --border-size: 0.25rem;
+    --spacing-sm: 0.25rem;
+    --spacing-md: 0.5rem;
+  }
 
-    .wrapper {
-      font-size: 0.7rem;
-    }
+  .wrapper {
+    font-size: 0.7rem;
+  }
 
-    .userp {
-      margin-left: 0.5rem;
-    }
+  .userp {
+    margin-left: 0.5rem;
+  }
 
-    .userpd {
-      margin-left: 1.5rem;
-    }
+  .userpd {
+    margin-left: 1.5rem;
+  }
 
-    .welcome {
-      letter-spacing: 0;
-    }
+  .welcome {
+    letter-spacing: 0;
+  }
 
-    .tab-button {
+  .tab-button {
+    padding: var(--spacing-sm) var(--spacing-sm);
+  }
+  .tab-link {
       padding: var(--spacing-sm) var(--spacing-sm);
-    }
-
-    .tab-content {
-      padding: var(--spacing-sm);
-    }
-    .logo{
-        font-size: 1.25rem;
-    }
+  }
+  .tab-content {
+    padding: var(--spacing-sm);
+  }
+  .logo{
+      font-size: 1.25rem;
+  }
 }
