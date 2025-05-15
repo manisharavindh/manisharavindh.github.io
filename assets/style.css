@@ -109,6 +109,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+.login{
+  font-size: 0.65rem;
+}
 
 .tab-nav {
   /* border: 1px solid red; */
@@ -183,15 +186,23 @@ body {
 .heading{
   display: inline-block;
   width: auto;
-  border-bottom: 1.5px dashed rgba(158, 151, 141, 0.6);
+  /* border-bottom: 0.5px dashed rgba(158, 151, 141, 0.6); */
   margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
 }
-/* .skill_list{
-  display: flex;
-} */
+.heading:nth-child(1){
+  margin-top: auto;
+}
 .skill_list p{
   margin-right: 0.5rem;
   margin-bottom: 0.15rem;
+}
+
+.clinks{
+  margin-bottom: 0.1rem;
+}
+.clinks span{
+  cursor: pointer;
 }
 
 
@@ -235,7 +246,7 @@ body {
   .welcome{
       font-size: 0.25rem;
       font-weight: bolder;
-      line-height: 0.1rem;
+      line-height: 0.2rem;
   }
   .logo{
       font-size: 1.25rem;

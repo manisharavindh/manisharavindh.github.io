@@ -36,8 +36,13 @@ createEle(5500, 'p', "        #  #   # #       #       #     #  #     # #     # 
 createEle(5500, 'p', "         ##  ##  ####### #######  #####   ####### #     # #######    #     # #      # ### #     # #     # #     # ####### ######  #     #", "welcome")
 
 setTimeout(() => {
-    ls.remove();
-}, 7500);
+    ls.style.transition = "opacity 0.2s";
+    ls.style.opacity = "0";
+    
+    setTimeout(() => {
+      ls.remove();
+    }, 200);
+  }, 7500);
 
 function reload(){
     location.reload();
@@ -67,3 +72,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById("login").innerHTML = new Date().toTimeString();
