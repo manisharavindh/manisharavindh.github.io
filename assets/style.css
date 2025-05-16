@@ -170,6 +170,7 @@ body {
   font-weight: 600;
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
+  margin-right: 0.25rem;
 }
 .logo{
   color: var(--cursor);
@@ -226,11 +227,11 @@ body {
   width: 100%;
   border-top: 0.15rem solid var(--black);
   justify-content: end;
-  z-index: 2;
+  margin-left: 0.25rem;
 }
 .logo2{
   transform: rotate(180deg);
-  margin-bottom: -4px;
+  margin-bottom: -4.5px;
 }
 
 .tab-link {
@@ -277,7 +278,7 @@ body {
   color: var(--cursor);
   margin-right: 0.25rem;
 }
-.clinks span:nth-child(2){
+.clinks .link{
   cursor: pointer;
   text-decoration: underline;
 }
@@ -298,6 +299,17 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 0.05rem solid var(--black);
 }
+.cursor{
+  color: var(--cursor);
+  font-size: larger;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @media (min-width: 768px) {
   .portfolio_box{
     height: 40vh;
