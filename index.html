@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="top_windows">
+    <!-- <div class="top_windows">
         <div class="ltext" onclick="reload()">_|</div>
         <div class="rtext" onclick="reload()">|_</div>
-    </div>
+    </div> -->
+    <div class="loading_screen"></div>
+    <div class="background"></div>
     <div class="wrapper">
-        <div class="loading_screen"></div>
         <div class="tab-container">
             <!-- <div class="login">login: <span id="login"></span></div> -->
             <div class="tab-nav">
@@ -24,22 +25,19 @@
                 <button class="tab-button" data-tab="tab4">more</button>
             </div>
             <div id="tab1" class="tab-content active">
-                <h3 class="heading">↳Hello World <span style="filter: none;">👋</span>, I'm <span style="text-transform: none;">Manish Aravindh</span></h3>
+                <h3 class="heading"><span>↳</span>Hello World <span style="filter: none;">👋</span>, I'm <span style="text-transform: none;">Manish Aravindh</span></h3>
                 <p>Student with a passion for AI/ML, Web, Apps, and Games development. I build clean web experiences, simple games and love exploring Linux distros and system tinkering. </p>
-                <h3 class="heading">↳what i do</h3>
+                <h3 class="heading"><span>↳</span>what i do</h3>
                 <div class="skill_list">
                     <p>.py .js .cpp .java .html .css .sass</p>
-                    <!-- <br> -->
                     <p>/react /jquery /tailwindcss /bootstrap</p>
                 </div>
-                <!-- <br> -->
-                <h3 class="heading">↳what i will do (what i'm learning)</h3>
+                <h3 class="heading"><span>↳</span>what i will do (what i'm learning)</h3>
                 <div class="skill_list">
                     <p>.jl .r .hs .gd .cs</p>
                     <p>/docker /godot /unity</p>
                 </div>
-                <!-- <br> -->
-                <h3 class="heading">↳what i use</h3>
+                <h3 class="heading"><span>↳</span>what i use</h3>
                 <div class="skill_list">
                     <p>./macos ./debian ./vscode ./firefox ./godot</p>
                     <p>./git ./alacritty ./vim</p>
@@ -47,28 +45,39 @@
                 <br>
             </div>
             <div id="tab2" class="tab-content">
-                <p>Portfolio</p>
+                <div class="portfolio_box">
+                    <p>coming soon</p>
+                </div>
+                <div class="portfolio_box">
+                    <p>coming soon</p>
+                </div>
+                <div class="portfolio_box">
+                    <p>coming soon</p>
+                </div>
+                <div class="portfolio_box">
+                    <p>coming soon</p>
+                </div>
             </div>
             <div id="tab3" class="tab-content">
-                <h3 class="clinks">↳phone: 
+                <h3 class="clinks"><span>↳</span>phone: 
                     <span onclick="window.open('tel:+918825420748')">+91 88254 20748</span>
                   </h3>
-                  <h3 class="clinks">↳email: 
+                  <h3 class="clinks"><span>↳</span>email: 
                     <span onclick="window.open('mailto:manisharavindh2007@gmail.com')">manisharavindh2007@gmail.com</span>
                   </h3>
-                <h3 class="clinks">↳github: 
+                <h3 class="clinks"><span>↳</span>github: 
                     <span onclick="window.open('https://github.com/manisharavindh/', '_blank');">manisharavindh</span>
                 </h3>
-                <h3 class="clinks">↳linkedin: 
+                <h3 class="clinks"><span>↳</span>linkedin: 
                     <span onclick="window.open('https://www.linkedin.com/in/manisharavindh2007/', '_blank');">manisharavindh2007</span>
                 </h3>
-                <h3 class="clinks">↳twitter: 
-                    <span></span>
+                <h3 class="clinks"><span>↳</span>twitter: 
+                    <span onclick="window.open('https://x.com/manisharavindh/', '_blank');">manisharavindh</span>
                 </h3>
-                <h3 class="clinks">↳instagram: 
+                <h3 class="clinks"><span>↳</span>instagram: 
                     <span onclick="window.open('https://www.instagram.com/nowar3289/', '_blank');">nowar3289</span>
                 </h3>
-                <h3 class="clinks">↳reddit: 
+                <h3 class="clinks"><span>↳</span>reddit: 
                     <span onclick="window.open('https://www.reddit.com/user/NoWar3289/', '_blank');">NoWar3289</span>
                 </h3>
             </div>
@@ -76,10 +85,8 @@
                 <p>More</p>
             </div>
             <div class="tab-nav tab-nav2">
-                <!-- <div class="login">login: <span id="login"></span></div> -->
                 <button class="tab-link" onclick="window.open('https://github.com/manisharavindh/', '_blank');">github</button>
                 <button class="tab-link" onclick="window.open('https://www.linkedin.com/in/manisharavindh2007/', '_blank');">linkedin</button>
-                <!-- <button class="tab-link" onclick="window.open('https://www.reddit.com/user/NoWar3289/', '_blank');">reddit</button> -->
                 <div class="logo logo2">»</div>
             </div>
         </div>
