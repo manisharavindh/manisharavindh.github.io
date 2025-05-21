@@ -8,15 +8,10 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <!-- <div class="top_windows">
-        <div class="ltext" onclick="reload()">_|</div>
-        <div class="rtext" onclick="reload()">|_</div>
-    </div> -->
     <div class="loading_screen"></div>
     <div class="background"></div>
     <div class="wrapper">
         <div class="tab-container">
-            <!-- <div class="login">login: <span id="login"></span></div> -->
             <div class="tab-nav">
                 <div class="logo">»</div>
                 <button class="tab-button active" data-tab="tab1">home</button>
@@ -25,14 +20,16 @@
                 <button class="tab-button" data-tab="tab4">more</button>
             </div>
             <div id="tab1" class="tab-content active">
-                <h3 class="heading"><span>↳</span>Hello World <span style="filter: none;">👋</span>, I'm <span style="text-transform: none;">Manish Aravindh</span></h3>
-                <p>Student with a passion for AI/ML, Web, Apps, and Games development. I build clean web experiences, simple games and love exploring Linux distros and system tinkering. </p>
+                <h3 class="heading"><span>↳</span>Hello World 👋, I'm <span style="text-transform: none;">Manish Aravindh</span></h3>
+                <p class="sub-heading">engineering student with a passion for AI/ML, Web, App, Game development (coding in general). I build clean web experiences, simple games and love exploring Linux distros and system tinkering.<span>#</span>engineering-student<span>#</span>python-dev<span>#</span>passionate-about-ai<span>#</span>music-lover</p>
+                <!-- <p>ai&ds student with a passion for AI/ML, Web, App, Game development (coding in general).</p> -->
+                <h4 class="sub-heading"></h4>
                 <h3 class="heading"><span>↳</span>what i do</h3>
                 <div class="skill_list">
                     <p>.py .js .cpp .java .html .css .sass</p>
                     <p>/react /jquery /tailwindcss /bootstrap</p>
                 </div>
-                <h3 class="heading"><span>↳</span>what i will do (what i'm learning)</h3>
+                <h3 class="heading"><span>↳</span>what i'm learning</h3>
                 <div class="skill_list">
                     <p>.jl .r .hs .gd .cs</p>
                     <p>/docker /godot /unity</p>
@@ -45,17 +42,20 @@
                 <h3 class="heading"><span>↳</span><span class="cursor">▮</span></h3>
             </div>
             <div id="tab2" class="tab-content">
-                <div class="portfolio_box">
-                    <p>coming soon</p>
+                <div class="portfolio_box" onclick="window.open('https://github.com/manisharavindh/RPGForge', '_blank');">
+                    <h2 class="heading">RPGForge</h2>
+                    <p>RPGForge is a personal project aimed at helping myself and other new developers build simple 2D RPG style games using Python. It is designed to be a lightweight, easy to understand starting point for creating tile-based worlds, entities, and interactive gameplay.</p>
                 </div>
-                <div class="portfolio_box">
-                    <p>coming soon</p>
+                <div class="portfolio_box" onclick="window.open('https://github.com/manisharavindh/BitMapper2D', '_blank');">
+                    <h2 class="heading">BitMapper2D</h2>
+                    <p>BitMapper2D is a lightweight 2D tile map editor built with Pygame, designed for new game developers and level designers who need a simple but powerful tool for creating tile-based game maps. It allows you to quickly create, edit, and export maps as a txt file containing the respective index values of the tiles for the map array. Simply place the tiles from your texture library onto the grid, save your map, and import it into your game.</p>
                 </div>
-                <div class="portfolio_box">
-                    <p>coming soon</p>
+                <div class="portfolio_box" onclick="window.open('https://github.com/manisharavindh/Friday', '_blank')">
+                    <h2 class="heading">Friday</h2>
+                    <p>"Friday Voice Assistant" is a project designed to demonstrate the power of voice-controlled applications. By employing the capabilities of Python libraries and external APIs, this assistant can perform a variety of tasks simply by listening to your voice commands. From solving mathematical calculations to searching for information on the web, "Friday" is your virtual companion, ready to assist you with a wide range of tasks.</p>
                 </div>
-                <div class="portfolio_box">
-                    <p>coming soon</p>
+                <div class="portfolio_box" onclick="window.open('https://github.com/manisharavindh/', '_blank');">
+                    <p>more coming soon</p>
                 </div>
             </div>
             <div id="tab3" class="tab-content">
@@ -83,7 +83,7 @@
                 <h3 class="clinks"><span>↳</span><span class="cursor">▮</span></h3>
             </div>
             <div id="tab4" class="tab-content">
-                <p>More</p>
+                <h3 class="heading"><span>↳</span><span>more</span><span class="cursor">▮</span></h3>
             </div>
             <div class="tab-nav tab-nav2">
                 <button class="tab-link" onclick="window.open('https://github.com/manisharavindh/', '_blank');">github</button>

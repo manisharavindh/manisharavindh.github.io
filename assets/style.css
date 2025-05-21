@@ -79,7 +79,7 @@ body {
 .userp {
   margin-left: 3rem;
   display: inline-block;
-  border-bottom: 1.5px dashed var(--black);
+  border-bottom: 1.5px dashed var(--green);
   padding-bottom: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
 }
@@ -89,10 +89,10 @@ body {
 }
 
 .welcome {
-  font-size: clamp(0.25rem, 2vw, 0.6rem);
-  font-weight: bold;
+  font-size: clamp(0.5rem, 2vw, 0.6rem);
+  font-weight: bolder;
   white-space: pre;
-  margin-bottom: 0.05rem;
+  line-height: 0.6rem;
   letter-spacing: 1px;
 }
 
@@ -201,19 +201,14 @@ body {
 }
 .tab-content.grid {
   display: grid;
-  grid-template-columns: 1fr; /* Default: 1 column (mobile) */
+  grid-template-columns: 1fr;
   gap: 1rem;
   place-items: center;
 }
 
 @media (min-width: 768px) {
-  .tab-content.grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on larger screens */
-    place-items: initial; /* reset to normal so items align in grid */
-    justify-items: center; /* horizontally center fixed-width boxes */
-  }
   .portfolio_box{
-    height: 50vh;
+    height: auto;
   }
 }
 
@@ -287,17 +282,24 @@ body {
 }
 
 .portfolio_box {
-  height: 30vh;
+  height: auto;
   width: 95%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: rgba(68, 50, 76, 0.367);
+  background-color: rgba(68, 50, 76, 0.25);
   backdrop-filter: blur(100px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 0.05rem solid var(--black);
+  cursor: pointer;
+}
+.portfolio_box:hover{
+  transform: scale(1.015);
+}
+.portfolio_box h2{
+  width: 100%;
+  border-bottom: 0.1rem solid var(--black);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
 }
 .cursor{
   color: var(--cursor);
@@ -310,9 +312,17 @@ body {
   100% { opacity: 1; }
 }
 
+.sub-heading span{
+  color: var(--cursor);
+  margin-right: 1px;
+  margin: 0 1px 0 5px;
+}
+
+
 @media (min-width: 768px) {
   .portfolio_box{
-    height: 40vh;
+    height: auto;
+    width: 75%;
   }
 }
 
@@ -356,9 +366,9 @@ body {
   }
 
   .welcome{
-      font-size: 0.25rem;
-      font-weight: bolder;
-      line-height: 0.2rem;
+      font-size: 0.5rem;
+      font-weight: bold;
+      line-height: 0.4rem;
   }
 }
 
@@ -382,7 +392,7 @@ body {
   }
 
   .welcome {
-    letter-spacing: 0;
+    letter-spacing: 0.5px;
   }
 
   .tab-button {
