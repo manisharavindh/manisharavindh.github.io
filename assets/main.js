@@ -1,83 +1,123 @@
+// Cache DOM elements and set up animation queue
 const ls = document.querySelector('.loading_screen');
-// const wrapper = document.querySelector('.wrapper');
+const animationQueue = [];
 
-function createEle(delay, element, content, classname){
-    setTimeout(() => {
-        const el = document.createElement(element);
-        el.textContent = content;
-        if(classname){
-            el.classList.add(classname);
+// More efficient element creation with batched DOM operations
+function createEle(delay, element, content, classname) {
+    animationQueue.push({
+        delay,
+        callback: () => {
+            const el = document.createElement(element);
+            el.textContent = content;
+            if (classname) {
+                el.classList.add(classname);
+            }
+            ls.appendChild(el);
         }
-        ls.appendChild(el);
-    }, delay);
+    });
 }
 
-createEle(1000, 'p', '* MA INDUSTRIES TERMINAL HIJACK SYSTEM (NOWAR3289)');
-createEle(1150, 'p', '// In Progress');
-createEle(2500, 'br');
-createEle(2500, 'br');
-createEle(2500, 'p', "The user is a part of the following security groups:", "userp");
-createEle(3000, 'p', "Domain users:", "userpd");
-createEle(3000, 'p', "BUILTIN\\Users", "userpd");
-createEle(3000, 'p', "NT AUTHORITY\\INTERACTIVE", "userpd");
-createEle(4000, 'br');
-createEle(4000, 'br');
-createEle(4000, 'br');
-createEle(4000, 'p', "OK to Reboot?  [Y/N]_");
-createEle(4500, 'br');
-createEle(4500, 'p', "C:\\");
-createEle(4500, 'br');
-createEle(5500, 'p', "        #     # ####### #        #####  ####### #     # #######     ", "welcome")
-createEle(5500, 'p', "        #  #  # #       #       #     # #     # ##   ## #           ", "welcome")
-createEle(5500, 'p', "        #  #  # #       #       #       #     # # # # # #           ", "welcome")
-createEle(5500, 'p', "        #  #  # #####   #       #       #     # #  #  # #####       ", "welcome")
-createEle(5500, 'p', "        #  #  # #       #       #       #     # #     # #           ", "welcome")
-createEle(5500, 'p', "        #  #  # #       #       #     # #     # #     # #           ", "welcome")
-createEle(5500, 'p', "         ## ##  ####### #######  #####  ####### #     # #######     ", "welcome")
+// Set up loading animation sequence
+function setupLoadingAnimation() {
+    createEle(1000, 'p', '* MA INDUSTRIES TERMINAL HIJACK SYSTEM (NOWAR3289)');
+    createEle(1150, 'p', '// In Progress');
+    createEle(2500, 'br');
+    createEle(2500, 'br');
+    createEle(2500, 'p', "The user is a part of the following security groups:", "userp");
+    createEle(3000, 'p', "Domain users:", "userpd");
+    createEle(3000, 'p', "BUILTIN\\Users", "userpd");
+    createEle(3000, 'p', "NT AUTHORITY\\INTERACTIVE", "userpd");
+    createEle(4000, 'br');
+    createEle(4000, 'br');
+    createEle(4000, 'br');
+    createEle(4000, 'p', "OK to Reboot?  [Y/N]_");
+    createEle(4500, 'br');
+    createEle(4500, 'p', "C:\\");
+    createEle(4500, 'br');
 
-setTimeout(() => {
-    ls.remove();
-}, 7500);
+    const welcomeLines = [
+        "        #     # ####### #        #####  ####### #     # #######     ",
+        "        #  #  # #       #       #     # #     # ##   ## #           ",
+        "        #  #  # #       #       #       #     # # # # # #           ",
+        "        #  #  # #####   #       #       #     # #  #  # #####       ",
+        "        #  #  # #       #       #       #     # #     # #           ",
+        "        #  #  # #       #       #     # #     # #     # #           ",
+        "         ## ##  ####### #######  #####  ####### #     # #######     "
+    ];
 
-function reload(){
-    location.reload();
+    welcomeLines.forEach(line => {
+        createEle(5500, 'p', line, "welcome");
+    });
 }
 
-// setTimeout(() => {
-//     ls.remove();
-// }, 1000);
+function processAnimationQueue() {
+    let lastTimerId = null;
+    
+    animationQueue.forEach(item => {
+        lastTimerId = setTimeout(item.callback, item.delay);
+    });
+    
+    setTimeout(() => {
+        ls.style.opacity = '0';
+        ls.style.transition = 'opacity 0.5s ease-out';
+        
+        setTimeout(() => {
+            ls.remove();
+        }, 750);
+    }, 7500);
+    
+    return lastTimerId;
+}
 
-// taps
-document.addEventListener('DOMContentLoaded', function () {
+// Initialize tab functionality
+function initTabs() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
     tabButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Remove active and grid classes from all contents
+        button.addEventListener('click', function() {
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => {
                 content.classList.remove('active');
-                content.classList.remove('grid'); // remove grid layout if previously applied
+                content.classList.remove('grid');
             });
 
-            // Add active class to current button
             this.classList.add('active');
 
-            // Show corresponding content
             const tabId = this.getAttribute('data-tab');
             const tabContent = document.getElementById(tabId);
             tabContent.classList.add('active');
 
-            // Apply grid layout only for tab2
             if (tabId === 'tab2') {
                 tabContent.classList.add('grid');
             }
         });
     });
-});
+}
 
+// Check if browser supports requestAnimationFrame and use it if available
+const raf = window.requestAnimationFrame || 
+            window.webkitRequestAnimationFrame || 
+            window.mozRequestAnimationFrame || 
+            function(callback) { return setTimeout(callback, 1000/60); };
 
-document.getElementById("login").innerHTML = new Date().toTimeString();
+// Main init function
+function init() {
+    // Set up and process animations
+    setupLoadingAnimation();
+    processAnimationQueue();
+    
+    // Initialize tab functionality when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTabs);
+    } else {
+        initTabs();
+    }
+}
 
-console.log(navigator);
+init();
+
+// Utility function to reload page
+function reload() {
+    location.reload();
+}
