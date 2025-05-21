@@ -262,7 +262,7 @@ body {
 .portfolio_box {
   height: auto;
   width: 100%;
-  /* margin-bottom: 1rem; */
+  margin-bottom: 0.25rem;
   padding: 1rem;
   box-sizing: border-box;
   background-color: transparent;
