@@ -266,8 +266,8 @@ body {
   padding: 1rem;
   box-sizing: border-box;
   background-color: transparent;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
   transition: transform 0.2s ease;
   border: 0.05rem solid var(--black);
   cursor: pointer;
