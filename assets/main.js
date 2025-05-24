@@ -1,5 +1,6 @@
 // Cache DOM elements and set up animation queue
 const ls = document.querySelector('.loading_screen');
+const wrapper = document.querySelector('.wrapper');
 const animationQueue = [];
 
 // More efficient element creation with batched DOM operations
@@ -59,7 +60,9 @@ function processAnimationQueue() {
     
     setTimeout(() => {
         ls.style.opacity = '0';
-        ls.style.transition = 'opacity 0.5s ease-out';
+        ls.style.transition = 'opacity 0.5s';
+        wrapper.style.opacity = '1';
+        wrapper.style.transition = 'opacity 0.25s';
         
         setTimeout(() => {
             ls.remove();
