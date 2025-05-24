@@ -92,10 +92,10 @@ body {
 }
 
 .welcome {
-  font-size: clamp(0.5rem, 2vw, 0.6rem);
+  font-size: clamp(1rem, 2vw, 0.6rem);
   font-weight: bolder;
   white-space: pre;
-  line-height: 0.6rem;
+  line-height: 0.8rem;
   letter-spacing: 1px;
 }
 

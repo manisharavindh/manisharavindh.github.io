@@ -2,6 +2,8 @@
 const ls = document.querySelector('.loading_screen');
 const wrapper = document.querySelector('.wrapper');
 const animationQueue = [];
+let assetsLoaded = false;
+let animationComplete = false;
 
 // More efficient element creation with batched DOM operations
 function createEle(delay, element, content, classname) {
@@ -37,13 +39,13 @@ function setupLoadingAnimation() {
     createEle(4500, 'br');
 
     const welcomeLines = [
-        "        #     # ####### #        #####  ####### #     # #######     ",
-        "        #  #  # #       #       #     # #     # ##   ## #           ",
-        "        #  #  # #       #       #       #     # # # # # #           ",
-        "        #  #  # #####   #       #       #     # #  #  # #####       ",
-        "        #  #  # #       #       #       #     # #     # #           ",
-        "        #  #  # #       #       #     # #     # #     # #           ",
-        "         ## ##  ####### #######  #####  ####### #     # #######     "
+        "      #     # ####### #        #####  ####### #     # #######     ",
+        "      #  #  # #       #       #     # #     # ##   ## #           ",
+        "      #  #  # #       #       #       #     # # # # # #           ",
+        "      #  #  # #####   #       #       #     # #  #  # #####       ",
+        "      #  #  # #       #       #       #     # #     # #           ",
+        "      #  #  # #       #       #     # #     # #     # #           ",
+        "       ## ##  ####### #######  #####  ####### #     # #######     "
     ];
 
     welcomeLines.forEach(line => {
@@ -51,25 +53,73 @@ function setupLoadingAnimation() {
     });
 }
 
+// Function to load all critical assets
+function loadAssets() {
+    return new Promise((resolve) => {
+        const assetsToLoad = [];
+        
+        // Load background image
+        const bgImg = new Image();
+        bgImg.src = '/assets/img/bg.jpg';
+        assetsToLoad.push(new Promise((imgResolve) => {
+            bgImg.onload = imgResolve;
+            bgImg.onerror = imgResolve; // Resolve even on error to prevent hanging
+        }));
+        
+        // Load font
+        const fontUrl = '/assets/fonts/MesloLGS NF Regular.ttf';
+        if ('fonts' in document) {
+            const fontFace = new FontFace('MesloLGS NF', `url(${fontUrl})`);
+            assetsToLoad.push(
+                fontFace.load().then(() => {
+                    document.fonts.add(fontFace);
+                }).catch(() => {
+                    // Resolve even on error to prevent hanging
+                })
+            );
+        }
+        
+        // Wait for all assets to load
+        Promise.all(assetsToLoad).then(() => {
+            assetsLoaded = true;
+            checkIfReadyToRemoveLoader();
+            resolve();
+        });
+    });
+}
+
 function processAnimationQueue() {
-    let lastTimerId = null;
+    let maxDelay = 0;
     
     animationQueue.forEach(item => {
-        lastTimerId = setTimeout(item.callback, item.delay);
+        setTimeout(item.callback, item.delay);
+        maxDelay = Math.max(maxDelay, item.delay);
     });
     
+    // Mark animation as complete after the longest delay + some buffer
     setTimeout(() => {
-        ls.style.opacity = '0';
-        ls.style.transition = 'opacity 0.5s';
-        wrapper.style.opacity = '1';
-        wrapper.style.transition = 'opacity 0.25s';
-        
-        setTimeout(() => {
-            ls.remove();
-        }, 750);
-    }, 7500);
+        animationComplete = true;
+        checkIfReadyToRemoveLoader();
+    }, maxDelay + 2000); // Add 2 seconds buffer for the welcome text to display
+}
+
+// Check if both assets and animations are ready
+function checkIfReadyToRemoveLoader() {
+    if (assetsLoaded && animationComplete) {
+        removeLoadingScreen();
+    }
+}
+
+// Remove loading screen with smooth transition
+function removeLoadingScreen() {
+    ls.style.opacity = '0';
+    ls.style.transition = 'opacity 0.5s';
+    wrapper.style.opacity = '1';
+    wrapper.style.transition = 'opacity 0.25s';
     
-    return lastTimerId;
+    setTimeout(() => {
+        ls.remove();
+    }, 750);
 }
 
 // Initialize tab functionality
@@ -106,6 +156,9 @@ const raf = window.requestAnimationFrame ||
 
 // Main init function
 function init() {
+    // Start loading assets immediately
+    loadAssets();
+    
     // Set up and process animations
     setupLoadingAnimation();
     processAnimationQueue();
@@ -118,7 +171,12 @@ function init() {
     }
 }
 
-init();
+// Start everything when the page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
 
 // Utility function to reload page
 function reload() {
