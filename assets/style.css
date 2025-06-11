@@ -463,4 +463,11 @@ body {
     overflow-wrap: break-word;
     word-break: break-word;
   }
+  #tab3 p{
+    margin-left: 1rem;
+    margin-bottom: 0.15rem;
+  }
+  #tab3 p span:nth-child(1) {
+    font-size: small;
+  }
 }
