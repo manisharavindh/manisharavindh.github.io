@@ -12,7 +12,7 @@
 
   --cursor-text: #011423;
   --cursor: #47FF9C;
-  --black: #214969;
+  --black: rgba(15, 196, 237, 0.25); /* #214969 */
   --red: #E52E2E;
   --green: #44FFB1;
   --yellow: #FFE073;
@@ -61,22 +61,23 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: #000;
 }
 
 .loading_screen {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(1, 20, 35, 0.75);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  background-color: #010F1A;
+  /* backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px); */
   color: var(--blue);
   padding: var(--spacing-md);
   z-index: 10;
   text-transform: none;
   font-size: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
 .userp {
@@ -103,10 +104,15 @@ body {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background: url("/assets/img/bg.jpg") center center/cover no-repeat;
-  z-index: -1;
+  background: url("https://t3.ftcdn.net/jpg/14/63/86/26/360_F_1463862679_kxu9lf9BXseyFzTnlZ17dj5zffPMAScJ.jpg") center center/cover no-repeat;
+  z-index: -2;
   top: 0;
   left: 0;
+  display: none;
+  
+  /* opacity: 0.1;
+  filter: contrast(100) saturate(100) brightness(0.1);
+  transform: scale(-1); */
 }
 
 .wrapper {
@@ -116,8 +122,8 @@ body {
   height: 100%;
   background-color: rgba(1, 20, 35, 0.75);
   color: #CBE0F0;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border-top: 0;
   padding: var(--spacing-md);
   position: relative;
@@ -125,6 +131,88 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/** cursor  */
+.mouse-cursor {
+    position: fixed;
+    height: 3rem;
+    aspect-ratio: 1;
+    border: 2px solid var(--cursor);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transition: width 0.15s, height 0.15s, background-color 0.15s, border-color 0.15s;
+    transform: translate(-47%, -40%);
+    mix-blend-mode: difference;
+    opacity: 0;
+}
+
+.mouse-cursor.hover {
+    height: 5rem;
+    background-color: var(--cursor);
+    border-color: transparent;
+}
+
+/** Square  */
+.square{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 25%;
+  aspect-ratio: 1;
+  border: 0.5px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: rotate 25s infinite linear;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+}
+
+@keyframes counter-rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('img/d11.svg');
+  background-repeat: repeat;
+  background-position: center;
+  animation: counter-rotate 25s infinite linear;
+  border-radius: 50%;
+}
+
+.square::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #47FF9C;
+  border-top: 1px solid var(--color-001);
+}
+
+/*  */
 
 .tab-container {
   height: 100%;
@@ -252,10 +340,12 @@ body {
   margin-right: 0.25rem;
 }
 
-.clinks .link {
+/* .link {
   cursor: pointer;
   text-decoration: underline;
-}
+  border: 1px solid red;
+  width: auto !important;
+} */
 
 .clinks span:hover {
   font-weight: 600;
@@ -266,7 +356,7 @@ body {
   text-align: center;
 }
 .tab-content.grid > * {
-  display: inline-block; /* if needed */
+  display: inline-block;
 }
 
 .portfolio_box {
@@ -298,6 +388,7 @@ body {
   color: var(--cursor);
   font-size: larger;
   animation: blink 1s infinite;
+  cursor: text;
 }
 
 @keyframes blink {
@@ -328,6 +419,7 @@ body {
   margin-bottom: 0.5rem;
   margin-left: 1.5rem;
   cursor: pointer;
+  width: fit-content;
 }
 #tab3 p span:nth-child(2):hover{
   text-decoration: underline;
@@ -338,6 +430,8 @@ body {
   margin-right: 0.25rem;
   font-size: medium;
 }
+
+
 /* Media queries */
 @media (min-width: 768px) {
   .portfolio_box {
@@ -407,6 +501,10 @@ body {
     width: 100%;
     padding: 0.75rem;
   }
+
+  .square{
+    width: 50%;
+  }
 }
 
 /* Small mobile view */
@@ -469,5 +567,9 @@ body {
   }
   #tab3 p span:nth-child(1) {
     font-size: small;
+  }
+
+  .square{
+    width: 50%;
   }
 }
