@@ -147,13 +147,34 @@ body {
 }
 
 /** Square  */
-.square{
+.sqc{
   position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translate(-50%, 50%);
   width: 25%;
   aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sqc1{
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.sqc2{
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.sqc2 .square{
+  animation-delay: -12.5s;
+}
+
+.square{
+  height: 100%;
+  width: 100%;
   border: 0.5px solid #fff;
   border-radius: 50%;
   overflow: hidden;
@@ -163,10 +184,10 @@ body {
 
 @keyframes rotate {
   from {
-    transform: translate(-50%, 50%) rotate(360deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: translate(-50%, 50%) rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -490,7 +511,7 @@ body {
     padding: 0.75rem;
   }
 
-  .square{
+  .sqc{
     width: 50%;
   }
 
@@ -568,7 +589,7 @@ body {
     font-size: small;
   }
 
-  .square{
+  .sqc{
     width: 50%;
   }
 
