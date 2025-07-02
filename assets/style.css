@@ -64,15 +64,13 @@ body {
   background-color: #000;
 }
 
-.loading_screen {
+/* .loading_screen {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background-color: #010F1A;
-  /* backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px); */
   color: var(--blue);
   padding: var(--spacing-md);
   z-index: 10;
@@ -98,7 +96,7 @@ body {
   white-space: pre;
   line-height: 0.8rem;
   letter-spacing: 1px;
-}
+} */
 
 .background {
   position: absolute;
@@ -109,10 +107,6 @@ body {
   top: 0;
   left: 0;
   display: none;
-  
-  /* opacity: 0.1;
-  filter: contrast(100) saturate(100) brightness(0.1);
-  transform: scale(-1); */
 }
 
 .wrapper {
@@ -122,14 +116,50 @@ body {
   height: 100%;
   background-color: rgba(1, 20, 35, 0.75);
   color: #CBE0F0;
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
   border-top: 0;
   padding: var(--spacing-md);
   position: relative;
   overflow: auto;
   display: flex;
   flex-direction: column;
+}
+
+/** Loading Screen  */
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1, 20, 35, 0.75);
+    color: var(--cursor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 200;
+    /* border: 1px solid red; */
+}
+
+.loading-container #spinner {
+    z-index: 1;
+    color: rgba(71, 255, 157, 0.4);
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-container.close{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.loading-container.close #spinner{
+    opacity: 0;
+    transition: 0.25s;
 }
 
 /** cursor  */
@@ -226,6 +256,9 @@ body {
   padding: 0.25rem;
   flex-wrap: wrap;
   align-items: center;
+
+  width: 85%;
+  margin-right: 15%;
 }
 
 .tab-button {
@@ -272,10 +305,10 @@ body {
 }
 
 .tab-nav2 {
-  width: 100%;
+  width: 85%;
   border-top: 0.15rem solid var(--black);
   justify-content: flex-end;
-  margin-left: 0.25rem;
+  margin-left: 15%;
   margin-top: auto;
 }
 
@@ -505,6 +538,17 @@ body {
   .square{
     width: 50%;
   }
+
+  .tab-nav{
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .tab-nav2{
+    width: 100%;
+    margin-left: 0;
+  }
+
 }
 
 /* Small mobile view */
@@ -571,5 +615,15 @@ body {
 
   .square{
     width: 50%;
+  }
+
+  .tab-nav{
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .tab-nav2{
+    width: 100%;
+    margin-left: 0;
   }
 }

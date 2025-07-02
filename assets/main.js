@@ -1,5 +1,5 @@
 // Cache DOM elements and set up animation queue
-const ls = document.querySelector('.loading_screen');
+const ls = document.querySelector('.loading-screen');
 const wrapper = document.querySelector('.wrapper');
 const animationQueue = [];
 let assetsLoaded = false;
@@ -182,6 +182,27 @@ if (document.readyState === 'loading') {
 function reload() {
     location.reload();
 }
+
+//* Loading Screen
+const frames = ['—', '\\', '|', '/'];
+let currentFrame = 0;
+const spinner = document.getElementById('spinner');
+function animate() {
+    spinner.textContent = frames[currentFrame];
+    currentFrame = (currentFrame + 1) % frames.length;
+}
+
+const animationInterval = setInterval(animate, 100);
+setTimeout(() => {
+    const loadingContainer = document.querySelector('.loading-container');
+    loadingContainer.classList.add('close')
+    wrapper.style.opacity = '1';
+    wrapper.style.transition = 'opacity 0.25s';
+    setTimeout(() => {
+        loadingContainer.remove();
+        clearInterval(animationInterval);
+    }, 500);
+}, 2000);
 
 
 //* Cursor 
