@@ -64,49 +64,14 @@ body {
   background-color: #000;
 }
 
-/* .loading_screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: #010F1A;
-  color: var(--blue);
-  padding: var(--spacing-md);
-  z-index: 10;
-  text-transform: none;
-  font-size: 1rem;
-}
-
-.userp {
-  margin-left: 3rem;
-  display: inline-block;
-  border-bottom: 1.5px dashed var(--black);
-  padding-bottom: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
-}
-
-.userpd {
-  margin-left: 6rem;
-}
-
-.welcome {
-  font-size: clamp(1rem, 2vw, 0.6rem);
-  font-weight: bolder;
-  white-space: pre;
-  line-height: 0.8rem;
-  letter-spacing: 1px;
-} */
-
 .background {
   position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background: url("https://t3.ftcdn.net/jpg/14/63/86/26/360_F_1463862679_kxu9lf9BXseyFzTnlZ17dj5zffPMAScJ.jpg") center center/cover no-repeat;
-  z-index: -2;
   top: 0;
   left: 0;
-  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  background-color: #000;
 }
 
 .wrapper {
@@ -138,7 +103,6 @@ body {
     justify-content: center;
     font-size: 2rem;
     z-index: 200;
-    /* border: 1px solid red; */
 }
 
 .loading-container #spinner {
@@ -170,7 +134,6 @@ body {
     border: 2px solid var(--cursor);
     border-radius: 50%;
     pointer-events: none;
-    z-index: -1;
     transition: width 0.15s, height 0.15s, background-color 0.15s, border-color 0.15s;
     transform: translate(-47%, -40%);
     mix-blend-mode: difference;
@@ -196,7 +159,6 @@ body {
   overflow: hidden;
   animation: rotate 25s infinite linear;
   opacity: 0.5;
-  z-index: -1;
 }
 
 @keyframes rotate {
@@ -372,13 +334,6 @@ body {
   color: var(--cursor);
   margin-right: 0.25rem;
 }
-
-/* .link {
-  cursor: pointer;
-  text-decoration: underline;
-  border: 1px solid red;
-  width: auto !important;
-} */
 
 .clinks span:hover {
   font-weight: 600;
@@ -627,3 +582,43 @@ body {
     margin-left: 0;
   }
 }
+
+
+
+
+
+/** archive  */
+
+/* .loading_screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #010F1A;
+  color: var(--blue);
+  padding: var(--spacing-md);
+  z-index: 10;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.userp {
+  margin-left: 3rem;
+  display: inline-block;
+  border-bottom: 1.5px dashed var(--black);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.userpd {
+  margin-left: 6rem;
+}
+
+.welcome {
+  font-size: clamp(1rem, 2vw, 0.6rem);
+  font-weight: bolder;
+  white-space: pre;
+  line-height: 0.8rem;
+  letter-spacing: 1px;
+} */
