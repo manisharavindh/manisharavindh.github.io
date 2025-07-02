@@ -266,3 +266,37 @@ if (isMobile) {
 if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     cursor.style.display = 'none';
 }
+
+
+// 
+
+// const textInput = document.getElementById('textInput');
+//         const typedText = document.getElementById('typedText');
+//         // const cursor = document.getElementById('cursor');
+//         let typingTimer;
+
+//         textInput.addEventListener('input', function() {
+//             // Update the displayed text
+//             typedText.textContent = this.value;
+            
+//             // Stop cursor blinking while typing
+//             cursor.classList.add('typing');
+            
+//             // Clear previous timer
+//             clearTimeout(typingTimer);
+            
+//             // Resume blinking after 500ms of no typing
+//             typingTimer = setTimeout(() => {
+//                 cursor.classList.remove('typing');
+//             }, 500);
+//         });
+
+//         // Focus on the input field when clicking anywhere in the container
+//         document.querySelector('.typing-container').addEventListener('click', () => {
+//             textInput.focus();
+//         });
+
+//         // Auto-focus on page load
+//         window.addEventListener('load', () => {
+//             textInput.focus();
+//         });

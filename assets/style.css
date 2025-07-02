@@ -324,6 +324,17 @@ body {
   color: var(--blue);
 }
 
+.heading input{
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: var(--blue);
+  font-size: 1em;
+  caret-color: transparent;
+  margin-left: -12.5px;
+  padding-left: 11px;
+}
+
 .heading:nth-child(1) {
   margin-top: auto;
 }
@@ -394,10 +405,11 @@ body {
 }
 
 .cursor {
-  color: var(--cursor);
+  color: var(--cursor) !important;
   font-size: larger;
   animation: blink 1s infinite;
   cursor: text;
+  pointer-events: none;
 }
 
 @keyframes blink {
