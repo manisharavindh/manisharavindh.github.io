@@ -324,17 +324,6 @@ body {
   color: var(--blue);
 }
 
-.heading input{
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-  color: var(--blue);
-  font-size: 1em;
-  caret-color: transparent;
-  margin-left: -12.5px;
-  padding-left: 11px;
-}
-
 .heading:nth-child(1) {
   margin-top: auto;
 }
@@ -404,20 +393,6 @@ body {
   padding-bottom: var(--spacing-sm);
 }
 
-.cursor {
-  color: var(--cursor) !important;
-  font-size: larger;
-  animation: blink 1s infinite;
-  cursor: text;
-  pointer-events: none;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .sub-heading span {
   color: var(--cursor);
   margin: 0 1px 0 5px;
@@ -450,6 +425,64 @@ body {
   color: var(--cursor);
   margin-right: 0.25rem;
   font-size: medium;
+}
+
+/** input box  */
+
+.heading-input{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-box {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: var(--blue);
+  font-size: 1em;
+  width: 100%;
+  caret-color: transparent;
+  padding-left: 1.5px;
+}
+
+.box-cursor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background-color: var(--blue);
+    animation: blink 1s infinite;
+    pointer-events: none;
+    transition: left 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.cursor {
+  color: var(--cursor) !important;
+  font-size: larger;
+  animation: blink 1s infinite;
+  cursor: text;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 

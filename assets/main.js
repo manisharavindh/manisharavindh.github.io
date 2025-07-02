@@ -268,35 +268,114 @@ if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
 }
 
 
-// 
+//* input box 
+const input = document.querySelector('.input-box');
+const caret = document.querySelector('.box-cursor');
+let cursorPosition = 0;
 
-// const textInput = document.getElementById('textInput');
-//         const typedText = document.getElementById('typedText');
-//         // const cursor = document.getElementById('cursor');
-//         let typingTimer;
+function measureTextWidth(text) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    const computedStyle = window.getComputedStyle(input);
+    context.font = computedStyle.font;
+    return context.measureText(text).width;
+}
 
-//         textInput.addEventListener('input', function() {
-//             // Update the displayed text
-//             typedText.textContent = this.value;
-            
-//             // Stop cursor blinking while typing
-//             cursor.classList.add('typing');
-            
-//             // Clear previous timer
-//             clearTimeout(typingTimer);
-            
-//             // Resume blinking after 500ms of no typing
-//             typingTimer = setTimeout(() => {
-//                 cursor.classList.remove('typing');
-//             }, 500);
-//         });
+function updateCursorPosition() {
+    const textBeforeCursor = input.value.substring(0, cursorPosition);
+    const textWidth = measureTextWidth(textBeforeCursor);
+    caret.style.left = (textWidth) + 'px';
+    
+    const charUnderCursor = input.value.charAt(cursorPosition);
+    caret.textContent = charUnderCursor || ' ';
+    
+    if (charUnderCursor) {
+        const charWidth = measureTextWidth(charUnderCursor);
+        caret.style.width = Math.max(12, charWidth + 2) + 'px';
+    } else {
+        caret.style.width = '8px';
+    }
+    
+    caret.style.animation = 'none';
+    caret.offsetHeight;
+    caret.style.animation = 'blink 1s infinite';
+}
 
-//         // Focus on the input field when clicking anywhere in the container
-//         document.querySelector('.typing-container').addEventListener('click', () => {
-//             textInput.focus();
-//         });
+function setCursorPosition(pos) {
+    cursorPosition = Math.max(0, Math.min(pos, input.value.length));
+    input.setSelectionRange(cursorPosition, cursorPosition);
+    updateCursorPosition();
+}
 
-//         // Auto-focus on page load
-//         window.addEventListener('load', () => {
-//             textInput.focus();
-//         });
+input.addEventListener('input', (e) => {
+    if (e.inputType === 'deleteContentBackward') {
+        cursorPosition = Math.max(0, cursorPosition - 1);
+    } else if (e.inputType === 'deleteContentForward') {
+    } else if (e.data) {
+        cursorPosition += e.data.length;
+    }
+    updateCursorPosition();
+});
+
+input.addEventListener('keydown', (e) => {
+    switch(e.key) {
+        case 'ArrowLeft':
+            e.preventDefault();
+            setCursorPosition(cursorPosition - 1);
+            break;
+        case 'ArrowRight':
+            e.preventDefault();
+            setCursorPosition(cursorPosition + 1);
+            break;
+        case 'Home':
+            e.preventDefault();
+            setCursorPosition(0);
+            break;
+        case 'End':
+            e.preventDefault();
+            setCursorPosition(input.value.length);
+            break;
+        case 'Backspace':
+            if (cursorPosition > 0) {
+                cursorPosition--;
+            }
+            break;
+        case 'Delete':
+            break;
+    }
+});
+
+input.addEventListener('click', (e) => {
+    const inputRect = input.getBoundingClientRect();
+    const clickX = e.clientX - inputRect.left;
+    
+    const text = input.value;
+    let closestPosition = 0;
+    let minDistance = Math.abs(clickX);
+    
+    for (let i = 0; i <= text.length; i++) {
+        const textWidth = measureTextWidth(text.substring(0, i));
+        const distance = Math.abs(clickX - textWidth);
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestPosition = i;
+        }
+    }
+    
+    setCursorPosition(closestPosition);
+});
+
+input.addEventListener('selectionchange', () => {
+    if (document.activeElement === input) {
+        cursorPosition = input.selectionStart;
+        updateCursorPosition();
+    }
+});
+
+input.addEventListener('focus', () => {
+    cursorPosition = input.selectionStart || 0;
+    updateCursorPosition();
+});
+
+input.focus();
+updateCursorPosition();
