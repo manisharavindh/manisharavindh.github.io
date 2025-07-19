@@ -332,8 +332,8 @@ body {
   margin-bottom: var(--spacing-md);
 }
 
-.aboutp:nth-child(4){
-  margin-bottom: auto;
+.aboutp:nth-child(3){
+  margin-bottom: auto !important;
 }
 
 .heading span:nth-child(1) {

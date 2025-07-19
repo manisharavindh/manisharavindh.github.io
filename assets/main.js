@@ -208,63 +208,64 @@ setTimeout(() => {
 //* Cursor 
 const cursor = document.querySelector('.mouse-cursor');
 const cursorHoverElements = document.querySelectorAll('.cursor-hover');
-
 let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
 let cursorY = 0;
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+const supportsHover = window.matchMedia('(hover: hover)').matches;
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                 window.innerWidth <= 768 || 
+                 'ontouchstart' in window || 
+                 navigator.maxTouchPoints > 0;
 
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-    
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    
-    checkHoverElements();
-    
-    requestAnimationFrame(animateCursor);
-}
-
-function checkHoverElements() {
-    let isHovering = false;
-    
-    cursorHoverElements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        if (cursorX >= rect.left && cursorX <= rect.right && 
-            cursorY >= rect.top && cursorY <= rect.bottom) {
-            isHovering = true;
-        }
-    });
-    
-    if (isHovering) {
-        cursor.classList.add('hover');
-    } else {
-        cursor.classList.remove('hover');
-    }
-}
-
-animateCursor();
-
-document.body.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-});
-
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-
-if (isMobile) {
+if (isMobile || !supportsHover) {
     cursor.style.display = 'none';
 } else {
     cursor.style.opacity = '0';
-}
-
-if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    cursor.style.display = 'none';
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        showCursorOnce();
+        
+        checkHoverElements(mouseX, mouseY);
+    });
+    
+    let cursorShown = false;
+    const showCursorOnce = () => {
+        if (!cursorShown) {
+            cursor.style.opacity = '1';
+            cursorShown = true;
+        }
+    };
+    
+    function animateCursor() {
+        const ease = 0.15;
+        cursorX += (mouseX - cursorX) * ease;
+        cursorY += (mouseY - cursorY) * ease;
+        
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+        
+        requestAnimationFrame(animateCursor);
+    }
+    
+    function checkHoverElements(x, y) {
+        let isHovering = false;
+        
+        cursorHoverElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (x >= rect.left && x <= rect.right &&
+                y >= rect.top && y <= rect.bottom) {
+                isHovering = true;
+            }
+        });
+        
+        cursor.classList.toggle('hover', isHovering);
+    }
+    
+    animateCursor();
 }
 
 
