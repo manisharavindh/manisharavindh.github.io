@@ -404,6 +404,7 @@ body {
 #tab3 h3 {
   color: var(--blue);
   white-space: pre;
+  margin-bottom: 0 !important;
 }
 #tab3 h3 span:nth-child(2){
   color: var(--foreground);
@@ -412,19 +413,21 @@ body {
   letter-spacing: 0.25px;
 }
 #tab3 p{
-  margin-bottom: 0.5rem;
-  margin-left: 1.5rem;
   cursor: pointer;
   width: fit-content;
+  margin: 0.25rem 0 0.75rem 0.15rem;
+  border-bottom: 1px solid var(--black);
+  line-height: 1rem;
 }
-#tab3 p span:nth-child(2):hover{
-  text-decoration: underline;
+#tab3 p span:nth-child(1):hover{
+  text-decoration: underline !important;
 }
 
 #tab3 p span:nth-child(1) {
   color: var(--cursor);
   margin-right: 0.25rem;
   font-size: medium;
+  display: none;
 }
 
 /** input box  */
@@ -627,8 +630,8 @@ body {
     word-break: break-word;
   }
   #tab3 p{
-    margin-left: 1rem;
-    margin-bottom: 0.15rem;
+    margin: 0.15rem 0 0.5rem 0.1rem;
+    line-height: 0.75rem;
   }
   #tab3 p span:nth-child(1) {
     font-size: small;
