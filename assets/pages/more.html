@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manish aravindh</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        *{
+            text-transform: lowercase;
+        }
+
+        .projects-container{
+            margin-bottom: 2em;
+        }
+
+        .projects-container .project-item{
+            margin: 0 0 0 1.5em;
+        }
+
+        .a-super:has(span){
+            color: var(--text-color-sec);
+            text-decoration: none;
+            display: -webkit-box;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .a-super:has(span):hover{
+            color: var( --bg-color);
+        }
+
+        .a-super span{
+            color: var( --accent-color-sec);
+        }
+        .a-super:hover span{
+            color: var( --bg-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="/" class="page-links a-super">[Manish Aravindh↗]</a>
+        </header>
+        <main>
+            <div class="heading">Learning projects:</div>
+            <div class="projects-container">
+                 <div class="project-item">
+                    <a href="https://github.com/manisharavindh/document-scanner-pytorch" target="_blank" class="a-super"><span>[active*] </span>document-scanner-pytorch</a>
+                </div>
+                 <div class="project-item">
+                    <a href="https://github.com/manisharavindh/basic-pytorch-models" target="_blank" class="a-super"><span>[08-2025] </span>basic-pytorch-models</a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/manisharavindh/card-classifier" target="_blank" class="a-super"><span>[07-2025] </span>card-classifier</a>
+                </div>
+            </div>
+            <div class="heading">Fun projects:</div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <a href="https://github.com/manisharavindh/0bart" target="_blank" class="a-super"><span>[05-2025] </span>0bart</a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/manisharavindh/0bMatrix" target="_blank" class="a-super"><span>[05-2025] </span>0bMatrix</a>
+                </div>
+            </div>
+            <div class="heading">Archive:</div>
+            <div class="projects-container">
+                <div class="project-item">
+                    <a href="/archive/cli.io/index.html" target="_blank" class="a-super"><span>[07-2025] </span>cli.io (old manisharavindh.github.io)</a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/manisharavindh/Friday" target="_blank" class="a-super"><span>[10-2023] </span>Friday (old project)</a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/manisharavindh/Code-Editor" target="_blank" class="a-super"><span>[06-2023] </span>Code-Editor (old project)</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
