@@ -2,121 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manish Aravindh</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/style.css">
-    <meta name="description" content="Manish Aravindh - Engineering student with a passion for AI/ML, Web, App, and Game development">
-    <link rel="preload" href="assets/fonts/MesloLGS NF Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/img/bg.jpg" as="image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="loading-container none">
-        <div id="spinner" class="cursor-hover"></div>
-    </div>
-    <div class="background">
-        <div class="mouse-cursor"></div>
-        <div class="sqc sqc1">
-            <div class="square"></div>
-        </div>
-        <div class="sqc sqc2">
-            <div class="square"></div>
-        </div>
-    </div>
     <div class="wrapper">
-        <div class="tab-container">
-            <div class="tab-nav">
-                <div class="logo">»</div>
-                <button class="tab-button active cursor-hover" data-tab="tab1">home</button>
-                <button class="tab-button cursor-hover" data-tab="tab2">projects</button>
-                <button class="tab-button cursor-hover" data-tab="tab3">contact</button>
-                <button class="tab-button cursor-hover" data-tab="tab4">more</button>
-            </div>
-            <div id="tab1" class="tab-content active">
-                <h3 class="heading"><span>↳</span>Hello World 👋, I'm <span style="text-transform: none;">Manish Aravindh</span></h3>
-                <!-- <p class="aboutp">I'm a student majoring in AI and Data Science, with a passion for coding that began when I was 12. What started as a childhood curiosity has grown into a career path I'm genuinely excited about. I enjoy building websites, mobile apps, and games - basically anything that brings ideas to life through code.</p> -->
-                 <p class="aboutp">Engineering student specializing in AI and Data Science. I’m all about building useful tools, clean websites, and things that just work. Outside of that, you’ll probably find me exploring Linux or breaking things (just to fix them again).</p>
-                <!-- <p class="aboutp">After finishing high school, I knew I wanted to stay in the tech world, so I chose AI and Data Science to keep learning and growing. In my free time, you'll find me building fun little projects or exploring different Linux distributions. I'm a bit of a system tinkering enthusiast who loves understanding how things work under the hood.</p> -->
-                <p class="aboutp">I'm always happy to connect with fellow developers and tech enthusiasts. Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and share ideas. Feel free to reach out!</p>
-                <h3 class="heading"><span>↳</span>what i use</h3>
-                <div class="skill_list">
-                    <p>.py /anaconda /jupyter /mysql</p>
-                    <p>.js .java .cpp /react /bootstrap /tailwindcss</p>
-                    <p>/macos /debian /vscode /firefox /github /alacritty</p>
-                </div>
-                <h3 class="heading"><span>↳</span>what i'm learning</h3>
-                <div class="skill_list">
-                    <p>.c .r .kt .gd .cs</p>
-                    <p>/pytorch /docker /godot /unity</p>
-                </div>
-                <h3 class="heading"><span>↳</span>what i like</h3>
-                <div class="skill_list">
-                    <p>./nature ./music ./horses</p>
-                    <p>./motor_vehicles ./grand_prix</p>
-                </div>
-                <h3 class="heading heading-input">
-                    <span>↳</span>
-                    <div class="input-container">
-                        <input type="text" class="input-box" placeholder="" maxlength="25">
-                        <div class="box-cursor"></div>
+        <header>
+            <h1>
+                <a href="/">Manish Aravindh</a>
+            </h1>
+        </header>
+        <main>
+            <section>
+                <p>Engineering student specializing in AI and Data Science. I’m all about building useful tools, clean websites, and things that just work. Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them again)</span>.</p>
+                <p>I'm always happy to connect with fellow developers and tech enthusiasts. Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and share ideas. Feel free to reach out!</p>
+                <p><span>what i use: </span>Python, Jupyter, JavaScript, React, Bootstrap, TailwindCSS, MySQL, Java, C++, macOS, Debian, vsCode, Firefox, GitHub, Alacritty</p>
+                <p><span>what i'm learning: </span>PyTorch, Docker, C, R, Godot</p>
+                <p><span>what i like: </span>Any tech, motor sports, nature, music</p>
+            </section>
+            <h1>Recent projects:</h1>
+            <section>
+                <section>
+                    <a href="https://github.com/manisharavindh/Fluxboard" target="_blank" class="a-super">Fluxboard</a>
+                    <div class="project-info">
+                        <span>New Tab Replacement For Firefox</span>
+                        <span>August 20, 2025</span>
                     </div>
-                </h3>
-            </div>
-            <div id="tab2" class="tab-content">
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/BitMapper2D', '_blank');">
-                    <h2 class="heading"><span>↳</span>BitMapper2D</h2>
-                    <p>BitMapper2D is a lightweight 2D tile map editor built with Pygame, designed for new game developers and level designers who need a simple but powerful tool for creating tile-based game maps. It allows you to quickly create, edit, and export maps as a txt file containing the respective index values of the tiles for the map array. Simply place the tiles from your texture library onto the grid, save your map, and import it into your game.</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/Fluxboard', '_blank');">
-                    <h2 class="heading"><span>↳</span>Fluxboard</h2>
-                    <p>Fluxboard is a minimal and fast new tab replacement extension for Firefox. It offers a clean interface with bookmarks, todos, notes, and a customizable clock. No clutter, no ads, no nonsense — just a simple, user-friendly productivity dashboard that just works.</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/RPGForge', '_blank');">
-                    <h2 class="heading"><span>↳</span>RPGForge</h2>
-                    <p>RPGForge is a personal project aimed at helping myself and other new developers build simple 2D RPG style games using Python. It is designed to be a lightweight, easy to understand starting point for creating tile-based worlds, entities, and interactive gameplay.</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/Friday', '_blank')">
-                    <h2 class="heading"><span>↳</span>Friday</h2>
-                    <p>"Friday Voice Assistant" is a project designed to demonstrate the power of voice-controlled applications. By employing the capabilities of Python libraries and external APIs, this assistant can perform a variety of tasks simply by listening to your voice commands. From solving mathematical calculations to searching for information on the web, "Friday" is your virtual companion, ready to assist you with a wide range of tasks.</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/', '_blank');">
-                    <p>more coming soon</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/', '_blank');">
-                    <p>more coming soon</p>
-                </div>
-                <div class="portfolio_box cursor-hover" onclick="window.open('https://github.com/manisharavindh/', '_blank');">
-                    <p>more coming soon</p>
-                </div>
-            </div>
-            <div id="tab3" class="tab-content">
-                <h3 class="clinks"><span>↳</span>phone</h3>
-                <p><span>↳</span><span onclick="window.open('tel:+918825420748')" class="link cursor-hover">+91 88254 20748</span></p>
-                <h3 class="clinks"><span>↳</span>email</h3>
-                <p><span>↳</span><span onclick="window.open('mailto:manisharavindh2007@gmail.com')" class="link cursor-hover">manisharavindh2007@gmail.com</span></p>
-                <h3 class="clinks"><span>↳</span>github</h3>
-                <p><span>↳</span><span onclick="window.open('https://github.com/manisharavindh/', '_blank');" class="link cursor-hover">manisharavindh</span></p>
-                <h3 class="clinks"><span>↳</span>linkedin</h3>
-                <p><span>↳</span><span onclick="window.open('https://www.linkedin.com/in/manisharavindh2007/', '_blank');" class="link cursor-hover">manisharavindh2007</span></p>
-                <h3 class="clinks"><span>↳</span>instagram</h3>
-                <p><span>↳</span><span onclick="window.open('https://www.instagram.com/manisharavindh.xyz/', '_blank');" class="link cursor-hover">manisharavindh.xyz</span></p>
-                <h3 class="clinks"><span>↳</span>twitter</h3>
-                <p><span>↳</span><span onclick="window.open('https://x.com/manisharavindh/', '_blank');" class="link cursor-hover">manisharavindh</span></p>
-                <h3 class="clinks"><span>↳</span>reddit</h3>
-                <p><span>↳</span><span onclick="window.open('https://www.reddit.com/user/NoWar3289/', '_blank');" class="link cursor-hover">NoWar3289</span></p>
-                <h3 class="clinks"><span>↳</span><span class="cursor cursor-hover">▮</span></h3>
-            </div>
-            <div id="tab4" class="tab-content">
-                <h3 class="heading"><span>↳</span>v0.8.9<span class="cursor">▮</span></h3>
-            </div>
-            <div class="tab-nav tab-nav2">
-                <button class="tab-link cursor-hover" onclick="window.open('./assets/Manish Aravindh.pdf', '_blank');">resume</button>
-                <button class="tab-link cursor-hover" onclick="window.open('https://github.com/manisharavindh/', '_blank');">github</button>
-                <button class="tab-link cursor-hover" onclick="window.open('https://www.linkedin.com/in/manisharavindh2007/', '_blank');">linkedin</button>
-                <div class="logo logo2">»</div>
-            </div>
-        </div>
+                </section>
+                <section>
+                    <a href="https://github.com/manisharavindh/BitMapper2D" target="_blank" class="a-super">BitMapper2D</a>
+                    <div class="project-info">
+                        <span>Simple Tile Map Editor</span>
+                        <span>May 25, 2025</span>
+                    </div>
+                </section>
+                <section>
+                    <a href="https://github.com/manisharavindh/RPGForge" target="_blank" class="a-super">RPGForge</a>
+                    <div class="project-info">
+                        <span>Simple template file for creating RPG games</span>
+                        <span>May 07, 2025</span>
+                    </div>
+                </section>
+                <section>
+                    <a href="https://github.com/manisharavindh/Friday" target="_blank" class="a-super">Friday</a>
+                    <div class="project-info">
+                        <span>Simple TTS Voice Assistant</span>
+                        <span>October 23, 2023</span>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <span>
+                [↗]: 
+                <a href="mailto:manisharavindh2007@gmail.com" target="_blank">Email</a>,
+                <a href="https://github.com/manisharavindh/" target="_blank">GitHub</a>,
+                <a href="https://www.linkedin.com/in/manisharavindh/" target="_blank">LinkedIn</a>,
+                <a href="https://www.instagram.com/manisharavindh.xyz/" target="_blank">Instagram</a>
+                <!-- <a href="https://x.com/manisharavindh/" target="_blank">Twitter</a> -->
+                <!-- <a href="" target="_blank">Resume</a> -->
+            </span>
+            <span>Last updated: August 20, 2025 at 09:48 AM [IST]</span>
+        </footer>
     </div>
-    <script src="assets/main.js" defer></script>
 </body>
 </html>
