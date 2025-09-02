@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simply cnn</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="/" class="page-links a-super">[Simply CNN]</a>
+        </header>
+
+
+        <h1>🤖 AI Image Classifier</h1>
+        <p class="subtitle">Upload an image to see AI predictions in real-time</p>
+        
+        <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">📸</div>
+            <p><strong>Drop an image here</strong></p>
+            <p>or click to browse</p>
+            <input type="file" id="fileInput" class="file-input" accept="image/*">
+        </div>
+        
+        <div class="preview-container">
+            <img id="preview" class="preview-image" alt="Preview">
+        </div>
+        
+        <button id="predictBtn" class="btn" disabled>🔮 Predict</button>
+        <button id="clearBtn" class="btn">🗑️ Clear</button>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Processing image with AI...</p>
+        </div>
+        
+        <div id="result" class="result">
+            <h3>🎯 Predictions</h3>
+            <div id="predictions"></div>
+        </div>
+    </div>
+</body>
+</html>
