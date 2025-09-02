@@ -28,9 +28,9 @@
                 <button id="predictBtn" class="btn" disabled>predict</button>
                 <button id="clearBtn" class="btn">clear</button>
             </div>
-            <div id="status" class="status" style="display: none;"></div>
+            <div id="status" class="status">-> error loading model</div>
             <div id="result" class="result">
-                <h3>-> prediction: <span id="predictions">...</span></h3>
+                <h3>-> prediction:<span id="predictions">...</span></h3>
             </div>
         </main>
     </div>
@@ -55,6 +55,32 @@
                 reader.readAsDataURL(file);
             }
         });
+
+        // handle clear and predict btn in one go
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileName').textContent = 'No file selected';
+            document.getElementById('preview').src = '';
+            document.getElementById('predictBtn').disabled = true;
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const predictBtn = document.getElementById('predictBtn');
+            if (file) {
+                predictBtn.disabled = false;
+            } else {
+                predictBtn.disabled = true;
+            }
+        });
+
+        // model loading and status update
+
+        // using the loaded model and doing predictions
+
+        // clear btn functionality
+
+        // predict btn functionality
     </script>
 </body>
 </html>

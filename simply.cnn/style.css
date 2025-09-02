@@ -143,6 +143,10 @@ main{
     cursor: not-allowed;
 }
 
+.status{
+    font-size: 13px;
+}
+
 .result h3{
     font-size: 13px;
 }
