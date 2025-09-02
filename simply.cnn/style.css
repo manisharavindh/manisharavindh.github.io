@@ -82,7 +82,7 @@ main{
     background-color: var(--accent-color-pri);
     border: 0;
     border-radius: 0.25rem;
-    font-size: 11px;
+    font-size: 9px;
     width: 25%;
     cursor: pointer;
 }
@@ -121,7 +121,7 @@ main{
 }
 
 .btns{
-    margin: 1em 0;
+    margin: 0.5em 0;
     display: flex;
     gap: 0.5em;
 }
@@ -130,7 +130,7 @@ main{
     width: 100%;
     background-color: none;
     border: 0;
-    padding: 0.5em 0;
+    padding: 0.25em 0;
     border-radius: 0;
     cursor: pointer;
     background-color: var(--accent-color-pri);
