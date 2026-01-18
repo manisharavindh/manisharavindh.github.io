@@ -21,8 +21,14 @@
     </section>
 
     <section class="marquee-section">
-        <div class="marquee">
+        <div class="marquee" id="marquee">
             <div class="marquee-content">
+                <span class="marquee-item">React</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Bootstrap</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">TailwindCSS</span>
+                <span class="marquee-item">•</span>
                 <span class="marquee-item">Python</span>
                 <span class="marquee-item">•</span>
                 <span class="marquee-item">PyTorch</span>
@@ -31,11 +37,27 @@
                 <span class="marquee-item">•</span>
                 <span class="marquee-item">JavaScript</span>
                 <span class="marquee-item">•</span>
+                <span class="marquee-item">MySQL</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Java</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">C++</span>
+                <span class="marquee-item">•</span>
+            </div>
+            <div class="marquee-content">
                 <span class="marquee-item">React</span>
                 <span class="marquee-item">•</span>
                 <span class="marquee-item">Bootstrap</span>
                 <span class="marquee-item">•</span>
                 <span class="marquee-item">TailwindCSS</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Python</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">PyTorch</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Jupyter</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">JavaScript</span>
                 <span class="marquee-item">•</span>
                 <span class="marquee-item">MySQL</span>
                 <span class="marquee-item">•</span>
@@ -109,5 +131,29 @@
     <footer class="footer">
         © Manish Aravindh 2025
     </footer>
+
+    <script>
+        // Smooth marquee animation with no gaps
+        const marquee = document.getElementById('marquee');
+        const marqueeContent = marquee.querySelector('.marquee-content');
+        const scrollSpeed = 1; // pixels per frame
+        
+        let scrollPosition = 0;
+        const contentWidth = marqueeContent.offsetWidth;
+
+        function animateMarquee() {
+            scrollPosition -= scrollSpeed;
+            
+            // Reset position when we've scrolled one full content width
+            if (Math.abs(scrollPosition) >= contentWidth) {
+                scrollPosition = 0;
+            }
+            
+            marquee.style.transform = `translateX(${scrollPosition}px)`;
+            requestAnimationFrame(animateMarquee);
+        }
+
+        animateMarquee();
+    </script>
 </body>
 </html>

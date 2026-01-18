@@ -57,7 +57,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-    animation: bounce 2s infinite;
+    animation: bounce 5s infinite;
 }
 
 .scroll-indicator svg {
@@ -67,9 +67,8 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
 }
 
 .marquee-section {
@@ -82,12 +81,13 @@ body {
 .marquee {
     display: flex;
     white-space: nowrap;
-    animation: scroll 20s linear infinite;
+    will-change: transform;
 }
 
 .marquee-content {
     display: flex;
     padding-right: 50px;
+    flex-shrink: 0;
 }
 
 .marquee-item {
@@ -95,11 +95,15 @@ body {
     font-weight: 700;
     padding: 0 30px;
     text-transform: uppercase;
+    flex-shrink: 0;
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.marquee-item:last-child{
+    padding-right: 0;
+}
+
+.marquee-item:first-child{
+    padding-right: 0;
 }
 
 .about-section {
