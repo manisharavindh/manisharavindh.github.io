@@ -1,3 +1,4 @@
+/* https://www.color-meanings.com/colors-that-go-with-black/ */
 :root{
     --bg-color: #1B2021;
     --text-color-pri: #C0C0C0;
@@ -14,7 +15,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Bebas+Neue&display=swap');
 
 body {
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     background: var(--bg-color);
     color: var(--text-color-pri);
     overflow-x: hidden;
@@ -31,10 +32,9 @@ body {
 }
 
 .name-display {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: clamp(80px, 15vw, 200px);
     font-weight: 900;
-    /* letter-spacing: 0.05em; */
     line-height: 0.9;
     text-align: center;
 }
@@ -47,7 +47,7 @@ body {
 .name-display .last {
     display: block;
     color: var(--text-color-pri);
-    -webkit-text-stroke: 3px var(--text-color-pri);
+    -webkit-text-stroke: 1.5px var(--text-color-pri);
     -webkit-text-fill-color: transparent;
 }
 
@@ -117,7 +117,7 @@ body {
     font-size: clamp(40px, 6vw, 80px);
     font-weight: 900;
     margin-bottom: 40px;
-    -webkit-text-stroke: 2.5px var(--text-color-pri);
+    -webkit-text-stroke: 1.5px var(--text-color-pri);
     -webkit-text-fill-color: transparent;
 }
 
@@ -240,11 +240,11 @@ body {
 
 @media (max-width: 768px) {
     .name-display .last{
-        -webkit-text-stroke: 2px var(--text-color-pri);
+        -webkit-text-stroke: 1px var(--text-color-pri);
     }
 
     .section-title{
-        -webkit-text-stroke: 1.5px var(--text-color-pri);
+        -webkit-text-stroke: 0.5px var(--text-color-pri);
     }
 
     .marquee-section{
