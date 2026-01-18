@@ -8,92 +8,166 @@
     <link rel="stylesheet" href="assets/style.css">
 
     <style>
-        *{
-            text-transform: lowercase;
-            line-height: normal;
-            font-size: 11px !important;
+        .header-link{
+            display: grid;
+            place-items: center;
+            line-height: 0.9;
+            font-weight: 900;
+            padding: 50px 0 25px 0;
+            font-size: clamp(20px, 3vw, 32px);
         }
 
-        .heading{
-            margin-bottom: 0em;
+        .header-link span {
+            color: var(--text-color-pri);
+            -webkit-text-stroke: 1.5px var(--text-color-pri);
+            -webkit-text-fill-color: transparent;
         }
 
-        .projects-container .project-item{
-            margin: 0 0 0 1.5em;
+        .header-link:hover{
+            text-decoration: underline;
         }
 
-        .projects-container .project-item:last-child{
-            margin-bottom: 1em;
+        .section-title{
+            margin: 80px 0 0 0;
         }
 
-        .a-super:has(span){
-            color: var(--text-color-sec);
-            text-decoration: none;
-            display: -webkit-box;
-            line-clamp: 1;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+        .section-title:first-child{
+            margin-top: 30px;
         }
 
-        .a-super:has(span):hover{
-            color: var( --bg-color);
+        .section-title{
+            margin: 40px 0 0 0;
+            font-size: clamp(30px, 4vw, 60px);
         }
 
-        .a-super span{
-            color: var( --accent-color-sec);
+        .portfolio-item{
+            padding: 10px 0;
+            border-bottom: 0.5px solid var(--text-color-pri);
         }
-        .a-super:hover span{
-            color: var( --bg-color);
+
+        .portfolio-item:first-child{
+            padding-top: 10px !important;
+        }
+
+        .portfolio-item:hover {
+            padding-left: 10px;
+        }
+        
+        .portfolio-item .project-name{
+            font-size: clamp(16px, 3vw, 32px);
+            font-weight: 600;
+            margin-bottom: 0px !important;
+        }
+
+        @media (max-width: 768px){
+            .header-link{
+                padding: 40px 0 20px 0;
+            }
+
+            .section-title{
+                margin: 40px 0 0 0;
+                font-size: clamp(30px, 4vw, 60px);
+            }
+            
+            .section-title:first-child{
+                margin-top: 0 !important;
+            }
+
+            .portfolio-section{
+                padding: 20px;
+                padding-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <a href="/" class="page-links a-super">[Manish Aravindh↗]</a>
-        </header>
-        <main>
-            <div class="heading">Learning projects:</div>
-            <div class="projects-container">
-                 <div class="project-item">
-                    <a href="https://github.com/manisharavindh/document-scanner-pytorch" target="_blank" class="a-super"><span>[active*] </span>document-scanner-pytorch</a>
-                </div>
-                 <div class="project-item">
-                    <a href="https://github.com/manisharavindh/basic-pytorch-models" target="_blank" class="a-super"><span>[08-2025] </span>basic-pytorch-models</a>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/manisharavindh/card-classifier" target="_blank" class="a-super"><span>[07-2025] </span>card-classifier</a>
-                </div>
+    <a href="/" class="header-link">MANISH <span>ARAVINDH</span></a>
+    <section class="portfolio-section" id="portfolio">
+        <h2 class="section-title">Learning projects:</h2>
+        <div class="portfolio-list">
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/document-scanner-pytorch" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[active*] </span> document-scanner-pytorch</span>
+                        <!-- <span class="project-description">Inventory & Billing Management System</span> -->
+                    </div>
+                </a>
             </div>
-            <div class="heading">Fun projects:</div>
-            <div class="projects-container">
-                <div class="project-item">
-                    <a href="https://github.com/manisharavindh/0bart" target="_blank" class="a-super"><span>[05-2025] </span>0bart</a>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/manisharavindh/0bMatrix" target="_blank" class="a-super"><span>[05-2025] </span>0bMatrix</a>
-                </div>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/basic-pytorch-models" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[08-2025] </span>basic-pytorch-models</span>
+                    </div>
+                </a>
             </div>
-            <div class="heading">Archive:</div>
-            <div class="projects-container">
-                <div class="project-item">
-                    <a href="/archive/cli.io/index.html" target="_blank" class="a-super"><span>[07-2025] </span>cli.io (old manisharavindh.github.io)</a>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/manisharavindh/Friday" target="_blank" class="a-super"><span>[10-2023] </span>Friday (old project)</a>
-                </div>
-                <div class="project-item">
-                    <a href="https://github.com/manisharavindh/Code-Editor" target="_blank" class="a-super"><span>[06-2023] </span>Code-Editor (old project)</a>
-                </div>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/card-classifier" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[07-2025] </span>card-classifier</span>
+                    </div>
+                </a>
             </div>
-            <div class="heading">test:</div>
-            <div class="projects-container">
-                <div class="project-item">
-                    <a href="/test.io/index.html" target="_blank" class="a-super"><span>[08-2025] </span>test.io</a>
-                </div>
+            <h2 class="section-title">Fun projects:</h2>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/0bart" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[05-2025] </span>0bart</span>
+                    </div>
+                </a>
             </div>
-        </main>
-    </div>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/0bMatrix" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[05-2025] </span>0bMatrix</span>
+                    </div>
+                </a>
+            </div>
+            <h2 class="section-title">Archive:</h2>
+            <div class="portfolio-item">
+                <a href="/archive/min.io/index.html" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[01-2026] </span>min.io (old io)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="/archive/cli.io/index.html" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[07-2025] </span>cli.io (old io)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/Friday" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[10-2023] </span>Friday (old project)</span>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/Code-Editor" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[06-2023] </span>Code-Editor (old project)</span>
+                    </div>
+                </a>
+            </div>
+            <h2 class="section-title">Test:</h2>
+            <div class="portfolio-item">
+                <a href="/test.io/index.html" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[12-2025] </span>test.io</span>
+                    </div>
+                </a>
+            </div>
+            <!--  -->
+            <!-- <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/0bMatrix" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name"><span>[05-2025] </span>0bMatrix</span>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+    </section>
 </body>
 </html>
