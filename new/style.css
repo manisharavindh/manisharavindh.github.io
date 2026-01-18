@@ -149,7 +149,6 @@ body {
 .portfolio-item {
     padding: 20px 0;
     border-bottom: 1px solid var(--text-color-pri);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -253,10 +252,11 @@ body {
 
     .about-section, .portfolio-section, .contact-section{
         padding: 60px 20px;
+        padding-bottom: 0;
     }
 
     .contact-section{
-        padding-bottom: 120px;
+        padding-bottom: 60px;
     }
 
     .social-links{
@@ -268,4 +268,12 @@ body {
         font-size: smaller;
         font-weight: 500;
     }
+}
+
+
+/*  */
+
+a, a:hover, a:visited, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
 }
