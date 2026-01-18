@@ -244,7 +244,7 @@ body {
     }
 
     .section-title{
-        -webkit-text-stroke: 0.5px var(--text-color-pri);
+        -webkit-text-stroke: 1px var(--text-color-pri);
     }
 
     .marquee-section{
