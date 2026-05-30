@@ -2,11 +2,11 @@
 
 /* firefox theme */
 :root{
-    --bg-color: #1C1B22;
-    --text-color-pri: #FBFBFE;
-    --text-color-sec: rgba(251, 251, 254, 0.5);
-    --accent-color-pri: #0DF;
-    --accent-color-sec: #0DF;
+    --bg-color: #0D2E26;
+    --text-color-pri: #D4F3EE;
+    --text-color-sec: rgba(212, 243, 238, 0.6);
+    --accent-color-pri: #2D9A7E;
+    --accent-color-sec: #2D9A7E;
 }
 
 /* github theme */
