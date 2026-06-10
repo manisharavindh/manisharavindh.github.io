@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,18 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <section class="hero">
         <div class="name-display">
             <span class="first">Manish</span>
             <span class="last">Aravindh</span>
         </div>
-        <div class="scroll-indicator" onclick="document.querySelector('.marquee-section').scrollIntoView({behavior: 'smooth'})">
+        <div class="scroll-indicator"
+            onclick="document.querySelector('.marquee-section').scrollIntoView({behavior: 'smooth'})">
             <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -72,20 +76,27 @@
     <section class="about-section" id="about">
         <h2 class="section-title">ABOUT</h2>
         <p class="about-text">
-            Engineering student specializing in AI and Data Science.
+            <!-- Engineering student specializing in AI and Data Science.
             I’m all about building useful tools, clean websites, and things that just work.
-            Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them again)</span>.
+            Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them again)</span>. -->
+
+            Just a chill guy exploring ai, embedded systems, automotive tech, blah, blah, blah...
+            I’m all about building useful tools, clean ui/ux, and things that just work.
+            Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them
+                again)</span>.
         </p>
         <p class="about-text">
             I'm always happy to connect with fellow developers and tech enthusiasts.
-            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and share ideas.
+            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and share
+            ideas.
             Feel free to reach out!
         </p>
         <p class="about-text">
-            What i use: <span>Python, Jupyter, JavaScript, React, Bootstrap, TailwindCSS, MySQL, Java, C++, macOS, Debian, vsCode, Firefox, GitHub, Alacritty</span>
+            What i use: <span>Python, Jupyter, JavaScript, React, Bootstrap, TailwindCSS, MySQL, Java, C++, macOS,
+                Debian, vsCode, Firefox, GitHub, Alacritty, ESP32, Arduino</span>
         </p>
         <p class="about-text">
-            what i'm learning: <span>PyTorch, Docker, C, R, Godot</span>
+            what i'm learning: <span>PyTorch, Docker, C, Automotive Systems, Rust, Ruby</span>
         </p>
         <p class="about-text">
             what i like: <span>Any tech, motor sports, nature, music</span>
@@ -95,6 +106,14 @@
     <section class="portfolio-section" id="portfolio">
         <h2 class="section-title">PROJECTS</h2>
         <div class="portfolio-list">
+            <div class="portfolio-item">
+                <a href="https://github.com/manisharavindh/headlight-dipper-cv" target="_blank">
+                    <div class="portfolio-content">
+                        <span class="project-name">headlight-dipper-cv</span>
+                        <span class="project-description">Smart Adaptive Headlight System</span>
+                    </div>
+                </a>
+            </div>
             <div class="portfolio-item">
                 <a href="https://github.com/manisharavindh/Inventrobil" target="_blank">
                     <div class="portfolio-content">
@@ -119,19 +138,19 @@
                     </div>
                 </a>
             </div>
-            <div class="portfolio-item">
+            <!-- <div class="portfolio-item">
                 <a href="https://github.com/manisharavindh/RPGForge" target="_blank">
                     <div class="portfolio-content">
                         <span class="project-name">RPGForge</span>
                         <span class="project-description">Simple template file for creating RPG games</span>
                     </div>
                 </a>
-            </div>
+            </div> -->
             <div class="portfolio-item">
-                <a href="/more.html">
+                <a href="https://github.com/manisharavindh?tab=repositories" target="_blank">
                     <div class="portfolio-content">
                         <span class="project-name">More</span>
-                        <span class="project-description">More projects and relevant links</span>
+                        <span class="project-description">my github repos...</span>
                     </div>
                 </a>
             </div>
@@ -159,22 +178,23 @@
         const marquee = document.getElementById('marquee');
         const marqueeContent = marquee.querySelector('.marquee-content');
         const scrollSpeed = 1;
-        
+
         let scrollPosition = 0;
         const contentWidth = marqueeContent.offsetWidth;
 
         function animateMarquee() {
             scrollPosition -= scrollSpeed;
-            
+
             if (Math.abs(scrollPosition) >= contentWidth) {
                 scrollPosition = 0;
             }
-            
+
             marquee.style.transform = `translateX(${scrollPosition}px)`;
             requestAnimationFrame(animateMarquee);
         }
-        
+
         animateMarquee();
     </script>
 </body>
+
 </html>
