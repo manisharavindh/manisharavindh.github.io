@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manish Aravindh</title>
+    <meta name="description"
+        content="Portfolio of Manish Aravindh — Engineering student specializing in AI, Computer Vision, Embedded Systems, and Automotive Technology.">
+    <meta name="author" content="Manish Aravindh">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap"
-        rel="stylesheet">
 </head>
 
-<body>
-    <section class="hero">
+<body class="dark-theme">
+
+    <!-- OVERLAYS -->
+    <div class="grain-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="hero">
         <div class="name-display">
             <span class="first">Manish</span>
             <span class="last">Aravindh</span>
         </div>
-        <div class="scroll-indicator"
-            onclick="document.querySelector('.marquee-section').scrollIntoView({behavior: 'smooth'})">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </div>
     </section>
 
+    <!-- ======================== MARQUEE TICKER (commented out) ======================== -->
+    <!--
     <section class="marquee-section">
         <div class="marquee" id="marquee">
             <div class="marquee-content">
@@ -51,7 +54,6 @@
                 <span class="marquee-item">JavaScript</span>
                 <span class="marquee-item">•</span>
             </div>
-
             <div class="marquee-content">
                 <span class="marquee-item">Python</span>
                 <span class="marquee-item">•</span>
@@ -76,128 +78,233 @@
             </div>
         </div>
     </section>
+    -->
 
-    <section class="about-section" id="about">
-        <h2 class="section-title">ABOUT</h2>
-        <p class="about-text">
-            <!-- Engineering student specializing in AI and Data Science.
-            I’m all about building useful tools, clean websites, and things that just work.
-            Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them again)</span>. -->
+    <!-- ======================== ZIGZAG DIVIDER ======================== -->
+    <div class="zigzag-divider zigzag-divider--to-cream"></div>
 
-            Just a chill guy exploring ai, embedded systems, automotive tech, blah, blah, blah...
-            I’m all about building useful tools, clean ui/ux, and things that just work.
-            Outside of that, you’ll probably find me exploring Linux or breaking things <span>(just to fix them
-                again)</span>.
-        </p>
-        <p class="about-text">
-            I'm always happy to connect with fellow developers and tech enthusiasts.
-            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and share
-            ideas.
-            Feel free to reach out!
-        </p>
-        <p class="about-text">
-            What i use: <span>Python, Jupyter, JavaScript, React, Bootstrap, TailwindCSS, MySQL, Java, C++, macOS,
-                Debian, vsCode, Firefox, GitHub, Alacritty, ESP32, Arduino</span>
-        </p>
-        <p class="about-text">
-            what i'm learning: <span>PyTorch, Docker, C, Automotive Systems, Rust, Ruby</span>
-        </p>
-        <p class="about-text">
-            what i like: <span>Any tech, motor sports, nature, music</span>
-        </p>
+    <!-- ======================== ABOUT ======================== -->
+    <section class="about-section section-cream" id="about">
+        <div class="about-inner">
+            <div class="about-header reveal">
+                <div class="slash-subtitle">/// who i am</div>
+                <h2 class="section-heading section-heading--dark">ABOUT ME</h2>
+            </div>
+
+            <p class="about-text reveal reveal-delay-1">
+                Just a chill guy exploring AI, embedded systems, automotive tech, blah, blah, blah...
+                I'm all about building useful tools, clean UI/UX, and things that just work.
+                Outside of that, you'll probably find me exploring Linux or breaking things
+                <span>(just to fix them again)</span>.
+            </p>
+            <p class="about-text reveal reveal-delay-2">
+                I'm always happy to connect with fellow developers and tech enthusiasts.
+                Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and
+                share ideas. Feel free to reach out!
+            </p>
+
+            <div class="tech-group reveal reveal-delay-3">
+                <span class="tech-group-label">/// what i use</span>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Jupyter</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Bootstrap</span>
+                    <span class="tech-tag">TailwindCSS</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">macOS</span>
+                    <span class="tech-tag">Debian</span>
+                    <span class="tech-tag">vsCode</span>
+                    <span class="tech-tag">Firefox</span>
+                    <span class="tech-tag">GitHub</span>
+                    <span class="tech-tag">Alacritty</span>
+                    <span class="tech-tag">ESP32</span>
+                    <span class="tech-tag">Arduino</span>
+                </div>
+            </div>
+
+            <div class="tech-group reveal reveal-delay-3">
+                <span class="tech-group-label">/// what i'm learning</span>
+                <div class="tech-tags">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">C</span>
+                    <span class="tech-tag">Automotive Systems</span>
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">Ruby</span>
+                </div>
+            </div>
+
+            <div class="tech-group reveal reveal-delay-4">
+                <span class="tech-group-label">/// what i like</span>
+                <div class="tech-tags">
+                    <span class="tech-tag">Any Tech</span>
+                    <span class="tech-tag">Motor Sports</span>
+                    <span class="tech-tag">Nature</span>
+                    <span class="tech-tag">Music</span>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- ======================== ZIGZAG DIVIDER ======================== -->
+    <div class="zigzag-divider zigzag-divider--to-dark"></div>
+
+    <!-- ======================== PROJECTS ======================== -->
     <section class="portfolio-section" id="portfolio">
-        <h2 class="section-title">PROJECTS</h2>
-        <div class="portfolio-list">
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/headlight-dipper-cv" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">headlight-dipper-cv</span>
-                        <span class="project-description">Smart Adaptive Headlight System</span>
-                    </div>
-                </a>
+        <div class="portfolio-inner">
+            <div class="portfolio-header reveal">
+                <div class="slash-subtitle">/// featured work</div>
+                <h2 class="section-heading">PROJECTS</h2>
             </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/Inventrobil" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">InventroBil</span>
-                        <span class="project-description">Inventory & Billing Management System</span>
+
+            <div class="portfolio-grid">
+                <a href="https://github.com/manisharavindh/AegisADAS" target="_blank"
+                    class="project-card reveal reveal-delay-1" id="project-aegis">
+                    <div class="project-card__meta">
+                        <span class="project-card__index">[PROJECT_01]</span>
+                        <span class="project-card__type">AI / Embedded</span>
+                    </div>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">AI Driver Assistance</div>
+                        <div class="project-card__name">AegisADAS</div>
                     </div>
                 </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/Fluxboard" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">Fluxboard</span>
-                        <span class="project-description">New Tab Replacement For Firefox</span>
+
+                <a href="https://github.com/manisharavindh/tablenet" target="_blank"
+                    class="project-card reveal reveal-delay-2" id="project-tablenet">
+                    <div class="project-card__meta">
+                        <span class="project-card__index">[PROJECT_02]</span>
+                        <span class="project-card__type">Full Stack</span>
+                    </div>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">Smart Restaurant Ordering</div>
+                        <div class="project-card__name">TableNet</div>
                     </div>
                 </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/BitMapper2D" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">BitMapper2D</span>
-                        <span class="project-description">Simple Tile Map Editor</span>
+
+                <a href="https://github.com/manisharavindh/Inventrobil" target="_blank"
+                    class="project-card reveal reveal-delay-3" id="project-inventrobil">
+                    <div class="project-card__meta">
+                        <span class="project-card__index">[PROJECT_03]</span>
+                        <span class="project-card__type">Full Stack</span>
+                    </div>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">Inventory & Billing</div>
+                        <div class="project-card__name">Inventrobil</div>
                     </div>
                 </a>
-            </div>
-            <!-- <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/RPGForge" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">RPGForge</span>
-                        <span class="project-description">Simple template file for creating RPG games</span>
+
+                <a href="https://github.com/manisharavindh/Fluxboard" target="_blank"
+                    class="project-card reveal reveal-delay-1" id="project-fluxboard">
+                    <div class="project-card__meta">
+                        <span class="project-card__index">[PROJECT_04]</span>
+                        <span class="project-card__type">Browser Extension</span>
+                    </div>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">Firefox New Tab</div>
+                        <div class="project-card__name">Fluxboard</div>
                     </div>
                 </a>
-            </div> -->
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh?tab=repositories" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name">More</span>
-                        <span class="project-description">my github repos...</span>
+
+                <a href="https://github.com/manisharavindh/BitMapper2D" target="_blank"
+                    class="project-card reveal reveal-delay-2" id="project-bitmapper">
+                    <div class="project-card__meta">
+                        <span class="project-card__index">[PROJECT_05]</span>
+                        <span class="project-card__type">Tool</span>
+                    </div>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">2D Tile Map Editor</div>
+                        <div class="project-card__name">BitMapper2D</div>
+                    </div>
+                </a>
+
+                <a href="more.html" class="project-card project-card--more reveal reveal-delay-3" id="project-more">
+                    <div>
+                        <span class="project-card__name">View All Projects →</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <h2 class="contact-title">How can I help?</h2>
-        <div class="contact-info">
-            Contact me at <a href="mailto:manisharavindh2007@gmail.com">manisharavindh.xyz@gmail.com</a>
-        </div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/manisharavindh/" class="social-link">LinkedIn</a>
-            <a href="https://github.com/manisharavindh/" class="social-link">GitHub</a>
-            <a href="https://www.instagram.com/manisharavindh.xyz/" class="social-link">Instagram</a>
-            <a href="https://x.com/manisharavindh/" class="social-link">Twitter</a>
-        </div>
-    </section>
+    <!-- ======================== ZIGZAG DIVIDER ======================== -->
+    <div class="zigzag-divider zigzag-divider--to-cream"></div>
 
-    <footer class="footer">
-        © Manish Aravindh 2025
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer-section section-cream" id="contact">
+        <div class="footer-huge-text">
+            <h2>MANISH_A</h2>
+        </div>
+
+        <div class="footer-brutalist-grid">
+            <!-- Col 1: Contact Info -->
+            <div class="footer-box branding">
+                <div>
+                    <div class="footer-tech-label">// GET_IN_TOUCH</div>
+                    <p class="footer-slogan" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 8px;">HOW CAN I
+                        HELP?</p>
+                </div>
+                <div
+                    style="font-family: var(--font-mono); font-size: clamp(14px, 1.8vw, 18px); color: var(--text-dark);">
+                    Contact me at <a href="mailto:manisharavindh2007@gmail.com"
+                        class="footer-email-link">manisharavindh.xyz@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Col 2: Socials -->
+            <div class="footer-box socials-box">
+                <div>
+                    <div class="footer-tech-label">// COMMS_LINK</div>
+                </div>
+                <div class="social-links-grid">
+                    <a href="https://www.linkedin.com/in/manisharavindh/" target="_blank"
+                        class="social-link-brutalist">LINKEDIN</a>
+                    <a href="https://github.com/manisharavindh/" target="_blank"
+                        class="social-link-brutalist">GITHUB</a>
+                    <a href="https://www.instagram.com/manisharavindh.xyz/" target="_blank"
+                        class="social-link-brutalist">INSTAGRAM</a>
+                    <a href="https://x.com/manisharavindh/" target="_blank" class="social-link-brutalist">TWITTER</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Info -->
+        <div class="footer-bottom-brutalist">
+            <div class="footer-contact-info-new">
+                <div class="footer-contact-item">
+                    <span class="footer-contact-label">LOCATION_DATA</span>
+                    <span>Coimbatore, Tamil Nadu</span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>© Manish Aravindh 2025</span>
+                <span><a href="https://github.com/manisharavindh" target="_blank"
+                        style="color: var(--text-dark); text-decoration: underline;">[:wq]</a></span>
+            </div>
+        </div>
     </footer>
 
+    <!-- ======================== SCRIPTS ======================== -->
     <script>
-        const marquee = document.getElementById('marquee');
-        const marqueeContent = marquee.querySelector('.marquee-content');
-        const scrollSpeed = 1;
+        // Marquee animation (commented out)
+        // const marquee = document.getElementById('marquee');
+        // const marqueeContent = marquee.querySelector('.marquee-content');
+        // const scrollSpeed = 1;
+        // let scrollPosition = 0;
+        // const contentWidth = marqueeContent.offsetWidth;
+        // function animateMarquee() {
+        //     scrollPosition -= scrollSpeed;
+        //     if (Math.abs(scrollPosition) >= contentWidth) { scrollPosition = 0; }
+        //     marquee.style.transform = `translateX(${scrollPosition}px)`;
+        //     requestAnimationFrame(animateMarquee);
+        // }
+        // animateMarquee();
 
-        let scrollPosition = 0;
-        const contentWidth = marqueeContent.offsetWidth;
-
-        function animateMarquee() {
-            scrollPosition -= scrollSpeed;
-
-            if (Math.abs(scrollPosition) >= contentWidth) {
-                scrollPosition = 0;
-            }
-
-            marquee.style.transform = `translateX(${scrollPosition}px)`;
-            requestAnimationFrame(animateMarquee);
-        }
-
-        animateMarquee();
+        // Scroll reveal removed
     </script>
 </body>
 

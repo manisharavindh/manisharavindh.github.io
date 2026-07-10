@@ -1,175 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Aravindh</title>
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <title>All Projects — Manish Aravindh</title>
+    <meta name="description" content="All projects by Manish Aravindh — learning projects, fun builds, and archives.">
     <link rel="stylesheet" href="assets/style.css">
-
-    <style>
-        .header-link{
-            display: grid;
-            place-items: center;
-            line-height: 0.9;
-            font-weight: 900;
-            padding: 50px 0 25px 0;
-            font-size: clamp(20px, 3vw, 32px);
-        }
-
-        .header-link span {
-            color: var(--text-color-pri);
-            -webkit-text-stroke: 1.5px var(--text-color-pri);
-            -webkit-text-fill-color: transparent;
-        }
-
-        .header-link:hover{
-            text-decoration: underline;
-        }
-
-        .section-title{
-            margin: 80px 0 0 0;
-        }
-
-        .section-title:first-child{
-            margin-top: 30px;
-        }
-
-        .section-title{
-            margin: 40px 0 0 0;
-            font-size: clamp(30px, 4vw, 60px);
-        }
-
-        .portfolio-item{
-            padding: 10px 0;
-        }
-
-        .portfolio-item:first-child{
-            padding-top: 10px !important;
-        }
-
-        .portfolio-item:hover {
-            padding-left: 10px;
-        }
-        
-        .portfolio-item .project-name{
-            font-size: clamp(16px, 3vw, 32px);
-            font-weight: 600;
-            margin-bottom: 0px !important;
-        }
-
-        @media (max-width: 768px){
-            .header-link{
-                padding: 40px 0 20px 0;
-            }
-
-            .section-title{
-                margin: 40px 0 0 0;
-                font-size: clamp(30px, 4vw, 60px);
-            }
-            
-            .section-title:first-child{
-                margin-top: 0 !important;
-            }
-
-            .portfolio-section{
-                padding: 10px 20px 40px 20px;
-            }
-        }
-    </style>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
-    <a href="/" class="header-link">MANISH <span>ARAVINDH</span></a>
-    <section class="portfolio-section" id="portfolio">
-        <h2 class="section-title">Learning projects:</h2>
-        <div class="portfolio-list">
-            <div class="portfolio-item">
+
+<body class="dark-theme">
+
+    <!-- OVERLAYS -->
+    <div class="grain-overlay"></div>
+    <div class="scanlines"></div>    <!-- ======================== PAGE HEADER ======================== -->
+    <header class="page-header">
+        <a href="/" class="page-header__link">MANISH <span>ARAVINDH</span></a>
+    </header>
+
+    <!-- ======================== PROJECT LISTINGS ======================== -->
+    <section class="more-section">
+
+        <!-- Learning Projects -->
+        <h2 class="more-section__title">/// learning projects</h2>
+        <div class="more-list">
+            <div class="more-item">
                 <a href="https://github.com/manisharavindh/document-scanner-pytorch" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[active*] </span> document-scanner-pytorch</span>
-                        <!-- <span class="project-description">Inventory & Billing Management System</span> -->
-                    </div>
+                    <span class="more-item__date">[active*]</span>
+                    <span class="more-item__name">document-scanner-pytorch</span>
                 </a>
             </div>
-            <div class="portfolio-item">
+            <div class="more-item">
                 <a href="https://github.com/manisharavindh/basic-pytorch-models" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[08-2025] </span>basic-pytorch-models</span>
-                    </div>
+                    <span class="more-item__date">[08-2025]</span>
+                    <span class="more-item__name">basic-pytorch-models</span>
                 </a>
             </div>
-            <div class="portfolio-item">
+            <div class="more-item">
                 <a href="https://github.com/manisharavindh/card-classifier" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[07-2025] </span>card-classifier</span>
-                    </div>
+                    <span class="more-item__date">[07-2025]</span>
+                    <span class="more-item__name">card-classifier</span>
                 </a>
             </div>
-            <h2 class="section-title">Fun projects:</h2>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/0bart" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[05-2025] </span>0bart</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/0bMatrix" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[05-2025] </span>0bMatrix</span>
-                    </div>
-                </a>
-            </div>
-            <h2 class="section-title">Archive:</h2>
-            <div class="portfolio-item">
-                <a href="/archive/min.io/index.html" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[01-2026] </span>min.io (old io)</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="/archive/cli.io/index.html" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[07-2025] </span>cli.io (old io)</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/Friday" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[10-2023] </span>Friday (old project)</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/Code-Editor" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[06-2023] </span>Code-Editor (old project)</span>
-                    </div>
-                </a>
-            </div>
-            <h2 class="section-title">Test:</h2>
-            <div class="portfolio-item">
-                <a href="/test.io/index.html" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[12-2025] </span>test.io</span>
-                    </div>
-                </a>
-            </div>
-            <!--  -->
-            <!-- <div class="portfolio-item">
-                <a href="https://github.com/manisharavindh/0bMatrix" target="_blank">
-                    <div class="portfolio-content">
-                        <span class="project-name"><span>[05-2025] </span>0bMatrix</span>
-                    </div>
-                </a>
-            </div> -->
         </div>
+
+        <!-- Fun Projects -->
+        <h2 class="more-section__title">/// fun projects</h2>
+        <div class="more-list">
+            <div class="more-item">
+                <a href="https://github.com/manisharavindh/0bart" target="_blank">
+                    <span class="more-item__date">[05-2025]</span>
+                    <span class="more-item__name">0bart</span>
+                </a>
+            </div>
+            <div class="more-item">
+                <a href="https://github.com/manisharavindh/0bMatrix" target="_blank">
+                    <span class="more-item__date">[05-2025]</span>
+                    <span class="more-item__name">0bMatrix</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Archive -->
+        <h2 class="more-section__title">/// archive</h2>
+        <div class="more-list">
+            <div class="more-item">
+                <a href="/archive/min.io/index.html" target="_blank">
+                    <span class="more-item__date">[01-2026]</span>
+                    <span class="more-item__name">min.io</span>
+                    <span class="more-item__suffix">(old io)</span>
+                </a>
+            </div>
+            <div class="more-item">
+                <a href="/archive/cli.io/index.html" target="_blank">
+                    <span class="more-item__date">[07-2025]</span>
+                    <span class="more-item__name">cli.io</span>
+                    <span class="more-item__suffix">(old io)</span>
+                </a>
+            </div>
+            <div class="more-item">
+                <a href="https://github.com/manisharavindh/Friday" target="_blank">
+                    <span class="more-item__date">[10-2023]</span>
+                    <span class="more-item__name">Friday</span>
+                    <span class="more-item__suffix">(old project)</span>
+                </a>
+            </div>
+            <div class="more-item">
+                <a href="https://github.com/manisharavindh/Code-Editor" target="_blank">
+                    <span class="more-item__date">[06-2023]</span>
+                    <span class="more-item__name">Code-Editor</span>
+                    <span class="more-item__suffix">(old project)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Test -->
+        <h2 class="more-section__title">/// test</h2>
+        <div class="more-list">
+            <div class="more-item">
+                <a href="/test.io/index.html" target="_blank">
+                    <span class="more-item__date">[12-2025]</span>
+                    <span class="more-item__name">test.io</span>
+                </a>
+            </div>
+        </div>
+
     </section>
 
+    <!-- ======================== FOOTER ======================== -->
     <footer class="footer">
-        © Manish Aravindh 2025
+        <span class="accent">///</span> © Manish Aravindh 2025 <span class="accent">::</span> ALL_SYSTEMS_NOMINAL
     </footer>
+
 </body>
+
 </html>
