@@ -386,7 +386,7 @@ a, a:hover, a:visited, a:focus, a:active {
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
+    gap: 24px;
     margin-bottom: 32px;
 }
 
@@ -847,7 +847,7 @@ a, a:hover, a:visited, a:focus, a:active {
 @media (max-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        gap: 20px;
     }
 }
 
@@ -896,7 +896,7 @@ a, a:hover, a:visited, a:focus, a:active {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 16px;
     }
 
     .project-card {
