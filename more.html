@@ -17,8 +17,8 @@
     <!-- OVERLAYS -->
     <div class="grain-overlay"></div>
     <div class="scanlines"></div>    <!-- ======================== PAGE HEADER ======================== -->
-    <header class="page-header">
-        <a href="/" class="page-header__link">MANISH <span>ARAVINDH</span></a>
+    <header class="page-header" style="justify-content: flex-start; padding-left: 40px;">
+        <a href="/" class="pop-button" style="margin: 0;">/// GO BACK</a>
     </header>
 
     <!-- ======================== PROJECT LISTINGS ======================== -->
@@ -110,11 +110,80 @@
 
     </section>
 
-    <!-- ======================== FOOTER ======================== -->
-    <footer class="footer">
-        <span class="accent">///</span> © Manish Aravindh 2025 <span class="accent">::</span> ALL_SYSTEMS_NOMINAL
+    <!-- ======================== NEW REFERENCE FOOTER ======================== -->
+    <footer class="footer-section section-dark new-footer" id="contact">
+        <div class="footer-brutalist-container">
+            <!-- Bottom Bar -->
+            <div class="footer-bottom-bar-brutalist">
+                <div class="bottom-left">
+                    <span class="footer-mono-text">Coimbatore, Tamil Nadu</span>
+                </div>
+                <div class="bottom-right">
+                    <span class="footer-mono-text-grey">© Manish Aravindh 2025</span>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- ======================== SCRIPTS ======================== -->
+    <script>
+        // Haptic Feedback for Button Elements
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playHapticTick() {
+            if (audioCtx.state === 'suspended') {
+                return; // Do not attempt to play or resume until the user explicitly unlocks via click
+            }
+            
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            // Sine wave for an ultra-smooth, pure tone without any harshness
+            osc.type = 'sine';
+            
+            // Low, static frequency for a soft, deep, subtle thud
+            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+
+            // Very soft volume (0.15) with a gentle attack and smooth decay
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.01); 
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08); 
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.1);
+        }
+
+        // Unlock audio context on first interaction
+        const unlockAudio = () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('keydown', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+        };
+        document.addEventListener('click', unlockAudio, { once: true });
+        document.addEventListener('keydown', unlockAudio, { once: true });
+        document.addEventListener('touchstart', unlockAudio, { once: true });
+
+        // Attach hover sound to most buttons
+        const hoverSelectors = '.project-card, .pop-button, .huge-btn, .footer-email-inline, .nav-link, a, .more-item';
+        document.querySelectorAll(hoverSelectors).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                try { playHapticTick(); } catch(e) {}
+            });
+        });
+
+        // Attach click sound exclusively to tech tags
+        document.querySelectorAll('.tech-tag').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                try { playHapticTick(); } catch(e) {}
+            });
+        });
+    </script>
 </body>
 
 </html>

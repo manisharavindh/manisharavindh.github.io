@@ -15,7 +15,10 @@
 </head>
 
 <body class="dark-theme">
-
+    <!-- ======================== PRELOADER ======================== -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__text" id="preloader-text">Hello</div>
+    </div>
     <!-- OVERLAYS -->
     <div class="grain-overlay"></div>
     <div class="scanlines"></div>
@@ -80,15 +83,14 @@
     </section>
     -->
 
-    <!-- ======================== ZIGZAG DIVIDER ======================== -->
-    <div class="zigzag-divider zigzag-divider--to-cream"></div>
+
 
     <!-- ======================== ABOUT ======================== -->
-    <section class="about-section section-cream" id="about">
+    <section class="about-section" id="about">
         <div class="about-inner">
             <div class="about-header reveal">
                 <div class="slash-subtitle">/// who i am</div>
-                <h2 class="section-heading section-heading--dark">ABOUT ME</h2>
+                <h2 class="section-heading">ABOUT ME</h2>
             </div>
 
             <p class="about-text reveal reveal-delay-1">
@@ -150,8 +152,7 @@
         </div>
     </section>
 
-    <!-- ======================== ZIGZAG DIVIDER ======================== -->
-    <div class="zigzag-divider zigzag-divider--to-dark"></div>
+
 
     <!-- ======================== PROJECTS ======================== -->
     <section class="portfolio-section" id="portfolio">
@@ -223,88 +224,137 @@
                 </a>
 
                 <a href="more.html" class="project-card project-card--more reveal reveal-delay-3" id="project-more">
-                    <div>
-                        <span class="project-card__name">View All Projects →</span>
+                    <div class="project-card__bottom">
+                        <div class="project-card__desc">Archive</div>
+                        <div class="project-card__name">View All Projects →</div>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ======================== ZIGZAG DIVIDER ======================== -->
-    <div class="zigzag-divider zigzag-divider--to-cream"></div>
-
-    <!-- ======================== FOOTER ======================== -->
-    <footer class="footer-section section-cream" id="contact">
-        <div class="footer-huge-text">
-            <h2>MANISH_A</h2>
-        </div>
-
-        <div class="footer-brutalist-grid">
-            <!-- Col 1: Contact Info -->
-            <div class="footer-box branding">
-                <div>
-                    <div class="footer-tech-label">// GET_IN_TOUCH</div>
-                    <p class="footer-slogan" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 8px;">HOW CAN I
-                        HELP?</p>
+    <!-- ======================== NEW REFERENCE FOOTER ======================== -->
+    <footer class="footer-section section-dark new-footer" id="contact">
+        <div class="footer-brutalist-container">
+            <!-- Main Split Box -->
+            <div class="footer-main-box">
+                <!-- Left Column -->
+                <div class="footer-col-left">
+                    <h2 class="footer-massive-heading">Let's build<br> something cool.</h2>
+                    <p class="footer-contact-text">Contact me at <a href="mailto:manisharavindh2007@gmail.com"
+                            class="footer-email-inline">manisharavindh.xyz@gmail.com</a></p>
                 </div>
-                <div
-                    style="font-family: var(--font-mono); font-size: clamp(14px, 1.8vw, 18px); color: var(--text-dark);">
-                    Contact me at <a href="mailto:manisharavindh2007@gmail.com"
-                        class="footer-email-link">manisharavindh.xyz@gmail.com</a>
+
+                <!-- Right Column -->
+                <div class="footer-col-right">
+                    <div class="footer-btn-grid">
+                        <a href="https://linkedin.com/in/manisharavindh" target="_blank" class="pop-button">LINKEDIN</a>
+                        <a href="https://github.com/manisharavindh" target="_blank" class="pop-button">GITHUB</a>
+                        <a href="https://instagram.com/manisharavindh.xyz" target="_blank"
+                            class="pop-button">INSTAGRAM</a>
+                        <a href="https://x.com/manisharavindh" target="_blank" class="pop-button">TWITTER</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Col 2: Socials -->
-            <div class="footer-box socials-box">
-                <div>
-                    <div class="footer-tech-label">// COMMS_LINK</div>
+            <!-- Bottom Bar -->
+            <div class="footer-bottom-bar-brutalist">
+                <div class="bottom-left">
+                    <span class="footer-mono-text">Coimbatore, Tamil Nadu</span>
                 </div>
-                <div class="social-links-grid">
-                    <a href="https://www.linkedin.com/in/manisharavindh/" target="_blank"
-                        class="social-link-brutalist">LINKEDIN</a>
-                    <a href="https://github.com/manisharavindh/" target="_blank"
-                        class="social-link-brutalist">GITHUB</a>
-                    <a href="https://www.instagram.com/manisharavindh.xyz/" target="_blank"
-                        class="social-link-brutalist">INSTAGRAM</a>
-                    <a href="https://x.com/manisharavindh/" target="_blank" class="social-link-brutalist">TWITTER</a>
+                <div class="bottom-right">
+                    <span class="footer-mono-text-grey">© Manish Aravindh 2025</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- Bottom Info -->
-        <div class="footer-bottom-brutalist">
-            <div class="footer-contact-info-new">
-                <div class="footer-contact-item">
-                    <span class="footer-contact-label">LOCATION_DATA</span>
-                    <span>Coimbatore, Tamil Nadu</span>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <span>© Manish Aravindh 2025</span>
-                <span><a href="https://github.com/manisharavindh" target="_blank"
-                        style="color: var(--text-dark); text-decoration: underline;">[:wq]</a></span>
             </div>
         </div>
     </footer>
 
     <!-- ======================== SCRIPTS ======================== -->
     <script>
-        // Marquee animation (commented out)
-        // const marquee = document.getElementById('marquee');
-        // const marqueeContent = marquee.querySelector('.marquee-content');
-        // const scrollSpeed = 1;
-        // let scrollPosition = 0;
-        // const contentWidth = marqueeContent.offsetWidth;
-        // function animateMarquee() {
-        //     scrollPosition -= scrollSpeed;
-        //     if (Math.abs(scrollPosition) >= contentWidth) { scrollPosition = 0; }
-        //     marquee.style.transform = `translateX(${scrollPosition}px)`;
-        //     requestAnimationFrame(animateMarquee);
-        // }
-        // animateMarquee();
+        // Preloader Logic
+        const words = ["Hello", "Bonjour", "Hallo", "Ciao", "Hola", "Namaste", "こんにちは", "வணக்கம்"];
+        const preloaderText = document.getElementById('preloader-text');
+        const preloader = document.getElementById('preloader');
+        let wordIndex = 0;
 
-        // Scroll reveal removed
+        if (preloader && preloaderText) {
+            // Prevent scrolling while preloader is active
+            document.body.style.overflow = 'hidden';
+
+            // Initial pause at the first word
+            setTimeout(() => {
+                const interval = setInterval(() => {
+                    wordIndex++;
+                    if (wordIndex < words.length) {
+                        preloaderText.textContent = words[wordIndex];
+                    } else {
+                        clearInterval(interval);
+
+                        preloader.classList.add('preloader--hidden');
+                        document.body.style.overflow = '';
+                    }
+                }, 120); // 1:1 speed with reference
+            }, 800); // initial pause duration
+        }
+
+
+        // Haptic Feedback for Button Elements
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playHapticTick() {
+            if (audioCtx.state === 'suspended') {
+                return; // Do not attempt to play or resume until the user explicitly unlocks via click
+            }
+
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            // Sine wave for an ultra-smooth, pure tone without any harshness
+            osc.type = 'sine';
+
+            // Low, static frequency for a soft, deep, subtle thud
+            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+
+            // Very soft volume (0.15) with a gentle attack and smooth decay
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.1);
+        }
+
+        // Unlock audio context on first interaction
+        const unlockAudio = () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('keydown', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+        };
+        document.addEventListener('click', unlockAudio, { once: true });
+        document.addEventListener('keydown', unlockAudio, { once: true });
+        document.addEventListener('touchstart', unlockAudio, { once: true });
+
+        // Attach hover sound to most buttons (excluding tech tags)
+        const hoverSelectors = '.project-card, .pop-button, .huge-btn, .footer-email-inline, .nav-link, a';
+        document.querySelectorAll(hoverSelectors).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                try { playHapticTick(); } catch (e) { }
+            });
+        });
+
+        // Attach click sound exclusively to tech tags (no hover sound)
+        document.querySelectorAll('.tech-tag').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                // We use mousedown instead of click for instant tactile response
+                try { playHapticTick(); } catch (e) { }
+            });
+        });
     </script>
 </body>
 
