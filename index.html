@@ -12,9 +12,12 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
-<body class="dark-theme">
+<body>
+
+
     <!-- ======================== PRELOADER ======================== -->
     <div id="preloader" class="preloader">
         <div class="preloader__text" id="preloader-text">Hello</div>
@@ -86,67 +89,102 @@
 
 
     <!-- ======================== ABOUT ======================== -->
-    <section class="about-section" id="about">
+    <section class="about-section brutalist-about" id="about">
         <div class="about-inner">
             <div class="about-header reveal">
                 <div class="slash-subtitle">/// who i am</div>
                 <h2 class="section-heading">ABOUT ME</h2>
             </div>
 
-            <p class="about-text reveal reveal-delay-1">
-                Just a chill guy exploring AI, embedded systems, automotive tech, blah, blah, blah...
-                I'm all about building useful tools, clean UI/UX, and things that just work.
-                Outside of that, you'll probably find me exploring Linux or breaking things
-                <span>(just to fix them again)</span>.
-            </p>
-            <p class="about-text reveal reveal-delay-2">
-                I'm always happy to connect with fellow developers and tech enthusiasts.
-                Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and
-                share ideas. Feel free to reach out!
-            </p>
-
-            <div class="tech-group reveal reveal-delay-3">
-                <span class="tech-group-label">/// what i use</span>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Jupyter</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Bootstrap</span>
-                    <span class="tech-tag">TailwindCSS</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">macOS</span>
-                    <span class="tech-tag">Debian</span>
-                    <span class="tech-tag">vsCode</span>
-                    <span class="tech-tag">Firefox</span>
-                    <span class="tech-tag">GitHub</span>
-                    <span class="tech-tag">Alacritty</span>
-                    <span class="tech-tag">ESP32</span>
-                    <span class="tech-tag">Arduino</span>
+            <div class="bento-grid">
+                <!-- Bento Tile 1: Bio (Large) -->
+                <div class="bento-tile bento-bio reveal reveal-delay-1">
+                    <div class="bento-tile__meta">
+                        <span class="bento-tile__index">[PROFILE_DATA]</span>
+                    </div>
+                    <div class="bento-tile__bottom">
+                        <p class="about-text">
+                            Just a chill guy exploring AI, embedded systems, automotive tech, blah, blah, blah...
+                            I'm all about building useful tools, clean UI/UX, and things that just work.
+                            Outside of that, you'll probably find me exploring Linux or breaking things
+                            <span>(just to fix them again)</span>.
+                        </p>
+                        <p class="about-text">
+                            I'm always happy to connect with fellow developers and tech enthusiasts.
+                            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and
+                            share ideas. Feel free to reach out!
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tech-group reveal reveal-delay-3">
-                <span class="tech-group-label">/// what i'm learning</span>
-                <div class="tech-tags">
-                    <span class="tech-tag">PyTorch</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">C</span>
-                    <span class="tech-tag">Automotive Systems</span>
-                    <span class="tech-tag">Rust</span>
-                    <span class="tech-tag">Ruby</span>
+                <!-- Bento Tile 2: Core Stack (Medium) -->
+                <div class="bento-tile bento-stack reveal reveal-delay-2">
+                    <div class="bento-tile__meta">
+                        <span class="bento-tile__index">[CORE_STACK]</span>
+                    </div>
+                    <div class="bento-tile__bottom">
+                        <div class="tech-group">
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Jupyter</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">macOS</span>
+                                <span class="tech-tag">Debian</span>
+                                <span class="tech-tag">vsCode</span>
+                                <span class="tech-tag">Firefox</span>
+                                <span class="tech-tag">GitHub</span>
+                                <span class="tech-tag">Alacritty</span>
+                                <span class="tech-tag">ESP32</span>
+                                <span class="tech-tag">Arduino</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tech-group reveal reveal-delay-4">
-                <span class="tech-group-label">/// what i like</span>
-                <div class="tech-tags">
-                    <span class="tech-tag">Any Tech</span>
-                    <span class="tech-tag">Motor Sports</span>
-                    <span class="tech-tag">Nature</span>
-                    <span class="tech-tag">Music</span>
+                <!-- Bento Tile 3: Focus / Learning (Small) -->
+                <div class="bento-tile bento-learning reveal reveal-delay-3">
+                    <div class="bento-tile__meta">
+                        <span class="bento-tile__index">[LEARNING]</span>
+                    </div>
+                    <div class="bento-tile__bottom">
+                        <div class="tech-group">
+                            <div class="tech-tags">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">Automotive</span>
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Ruby</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Tile 4: Hobbies (Small) -->
+                <div class="bento-tile bento-hobbies reveal reveal-delay-3">
+                    <div class="bento-tile__meta">
+                        <span class="bento-tile__index">[HOBBIES]</span>
+                    </div>
+                    <div class="bento-tile__bottom">
+                        <div class="tech-group">
+                            <div class="tech-tags">
+                                <span class="tech-tag">Motor Sports</span>
+                                <span class="tech-tag">Nature</span>
+                                <span class="tech-tag">Music</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Tile 5: Reactive Grid (Small) -->
+                <div class="bento-tile bento-reactive reveal reveal-delay-4" id="bento-reactive">
+                    <!-- Populated dynamically by JS -->
                 </div>
             </div>
         </div>
@@ -234,40 +272,34 @@
     </section>
 
     <!-- ======================== NEW REFERENCE FOOTER ======================== -->
-    <footer class="footer-section section-dark new-footer" id="contact">
-        <div class="footer-brutalist-container">
-            <!-- Main Split Box -->
-            <div class="footer-main-box">
-                <!-- Left Column -->
-                <div class="footer-col-left">
-                    <h2 class="footer-massive-heading">Let's build<br> something cool.</h2>
-                    <p class="footer-contact-text">Contact me at <a href="mailto:manisharavindh2007@gmail.com"
-                            class="footer-email-inline">manisharavindh.xyz@gmail.com</a></p>
+    <section class="footer-wrapper">
+        <footer class="footer-card-redesign" id="contact">
+            
+            <div class="footer-cta-section">
+                <div class="footer-cta-left">
+                    <h2 class="footer-cta-title">READY TO BUILD?</h2>
+                    <div class="footer-cta-pretext cta-text-link">contact me at <a href="mailto:manisharavindh2007@gmail.com" class="email-link">manisharavindh.xyz@gmail.com</a></div>
                 </div>
-
-                <!-- Right Column -->
-                <div class="footer-col-right">
-                    <div class="footer-btn-grid">
-                        <a href="https://linkedin.com/in/manisharavindh" target="_blank" class="pop-button">LINKEDIN</a>
-                        <a href="https://github.com/manisharavindh" target="_blank" class="pop-button">GITHUB</a>
-                        <a href="https://instagram.com/manisharavindh.xyz" target="_blank"
-                            class="pop-button">INSTAGRAM</a>
-                        <a href="https://x.com/manisharavindh" target="_blank" class="pop-button">TWITTER</a>
-                    </div>
+                <div class="footer-cta-right">
+                    <ul class="footer-social-list-vertical">
+                        <li><a href="https://linkedin.com/in/manisharavindh" target="_blank">LINKEDIN</a></li>
+                        <li><a href="https://github.com/manisharavindh" target="_blank">GITHUB</a></li>
+                        <li><a href="https://instagram.com/manisharavindh.xyz" target="_blank">INSTAGRAM</a></li>
+                        <li><a href="https://x.com/manisharavindh" target="_blank">TWITTER</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="footer-bottom-bar-brutalist">
-                <div class="bottom-left">
-                    <span class="footer-mono-text">Coimbatore, Tamil Nadu</span>
-                </div>
-                <div class="bottom-right">
-                    <span class="footer-mono-text-grey">© Manish Aravindh 2025</span>
+            <div class="footer-bottom-huge">
+                <div class="footer-marquee">
+                    <h2>MANISH ARAVINDH</h2>
+                    <h2>MANISH ARAVINDH</h2>
+                    <h2>MANISH ARAVINDH</h2>
+                    <h2>MANISH ARAVINDH</h2>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </section>
 
     <!-- ======================== SCRIPTS ======================== -->
     <script>
@@ -355,6 +387,82 @@
                 try { playHapticTick(); } catch (e) { }
             });
         });
+
+        // Wise-style individual letter currency morphing hover effect
+        const nameDisplay = document.querySelector('.name-display');
+        if (nameDisplay) {
+            const firstSpan = nameDisplay.querySelector('.first');
+            const lastSpan = nameDisplay.querySelector('.last');
+
+            // Pool of all currency symbols provided by user
+            const currencySymbols = ['₵', '₱', '₦', '£', '₾', '¥', '₸', '¢', '₽', '₿', '₴', '₼', '₹'];
+            let lastPickedSymbol = '';
+
+            function splitTextToSpans(element) {
+                const text = element.textContent.trim();
+                element.innerHTML = '';
+                for (let char of text) {
+                    if (char === ' ') {
+                        element.appendChild(document.createTextNode(' '));
+                        continue;
+                    }
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    // We must use inline-block so the span can be hovered properly
+                    span.style.display = 'inline-block';
+
+                    let timeoutId;
+                    span.addEventListener('mouseenter', () => {
+                        clearTimeout(timeoutId);
+                        // Pick a random currency symbol, ensuring it doesn't repeat consecutively
+                        let randomSymbol = currencySymbols[Math.floor(Math.random() * currencySymbols.length)];
+                        while (randomSymbol === lastPickedSymbol) {
+                            randomSymbol = currencySymbols[Math.floor(Math.random() * currencySymbols.length)];
+                        }
+                        lastPickedSymbol = randomSymbol;
+                        span.textContent = randomSymbol;
+                    });
+                    span.addEventListener('mouseleave', () => {
+                        // Wise-style delay before reverting to normal
+                        timeoutId = setTimeout(() => {
+                            span.textContent = char;
+                        }, 500);
+                    });
+
+                    element.appendChild(span);
+                }
+            }
+
+            if (firstSpan) splitTextToSpans(firstSpan);
+            if (lastSpan) splitTextToSpans(lastSpan);
+        }
+
+        // Bento Reactive Grid Logic
+        const bentoReactive = document.getElementById('bento-reactive');
+        if (bentoReactive) {
+            const charPool = ['/', '\\', '-', '_', '+', '=', '*', '#', 'X', 'O', '1', '0', '{', '}', '[', ']'];
+            // Fill with enough characters to form a dense grid without overflowing
+            const totalChars = 80; 
+            for (let i = 0; i < totalChars; i++) {
+                const charSpan = document.createElement('span');
+                charSpan.classList.add('bento-reactive-char');
+                charSpan.textContent = charPool[Math.floor(Math.random() * charPool.length)];
+                
+                charSpan.addEventListener('mouseenter', () => {
+                    charSpan.textContent = charPool[Math.floor(Math.random() * charPool.length)];
+                    charSpan.classList.add('active');
+                    try { playHapticTick(); } catch (e) {}
+                });
+                
+                charSpan.addEventListener('mouseleave', () => {
+                    setTimeout(() => {
+                        charSpan.classList.remove('active');
+                    }, 600); // Wait before dropping the highlight style
+                });
+                
+                bentoReactive.appendChild(charSpan);
+            }
+        }
     </script>
 </body>
 
