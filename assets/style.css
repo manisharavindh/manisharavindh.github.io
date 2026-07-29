@@ -338,6 +338,7 @@ a:active {
    ============================================================ */
 
 .about-section {
+    display: none !important;
     color: var(--text-light);
     padding: 100px 40px;
     position: relative;
@@ -496,8 +497,10 @@ a:active {
 .bento-hobbies {
     grid-column: span 1;
     grid-row: span 1;
-    background: var(--bg-cream); /* Dark Green */
-    color: var(--text-dark); /* Light Green Text */
+    background: var(--bg-cream);
+    /* Dark Green */
+    color: var(--text-dark);
+    /* Light Green Text */
     border: 2px solid var(--wise-fast-green);
     box-shadow: 0 8px 0 0 var(--wise-fast-green);
 }
@@ -514,6 +517,7 @@ a:active {
     background: transparent;
     box-shadow: 0 4px 0 0 var(--wise-fast-green);
 }
+
 .bento-hobbies .tech-tag:hover {
     box-shadow: 0 2px 0 0 var(--wise-fast-green);
 }
@@ -559,6 +563,7 @@ a:active {
     .bento-grid {
         grid-template-columns: 1fr;
     }
+
     .bento-tile {
         grid-column: span 1 !important;
         grid-row: auto !important;

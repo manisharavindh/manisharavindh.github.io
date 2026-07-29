@@ -10,9 +10,6 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script>
-        (function() {
-
 </head>
 
 <body>
@@ -20,7 +17,7 @@
 
     <!-- OVERLAYS -->
     <div class="grain-overlay"></div>
-    <div class="scanlines"></div>    <!-- ======================== PAGE HEADER ======================== -->
+    <div class="scanlines"></div> <!-- ======================== PAGE HEADER ======================== -->
     <header class="page-header" style="justify-content: flex-start; padding-left: 40px;">
         <a href="/" class="pop-button" style="margin: 0;">/// GO BACK</a>
     </header>
@@ -133,29 +130,29 @@
     <script>
         // Haptic Feedback for Button Elements
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
+
         function playHapticTick() {
             if (audioCtx.state === 'suspended') {
                 return; // Do not attempt to play or resume until the user explicitly unlocks via click
             }
-            
+
             const osc = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
-            
+
             // Sine wave for an ultra-smooth, pure tone without any harshness
             osc.type = 'sine';
-            
+
             // Low, static frequency for a soft, deep, subtle thud
             osc.frequency.setValueAtTime(200, audioCtx.currentTime);
 
             // Very soft volume (0.15) with a gentle attack and smooth decay
             gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.01); 
-            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08); 
-            
+            gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+
             osc.connect(gainNode);
             gainNode.connect(audioCtx.destination);
-            
+
             osc.start(audioCtx.currentTime);
             osc.stop(audioCtx.currentTime + 0.1);
         }
@@ -177,14 +174,14 @@
         const hoverSelectors = '.project-card, .pop-button, .huge-btn, .footer-email-inline, .nav-link, a, .more-item';
         document.querySelectorAll(hoverSelectors).forEach(el => {
             el.addEventListener('mouseenter', () => {
-                try { playHapticTick(); } catch(e) {}
+                try { playHapticTick(); } catch (e) { }
             });
         });
 
         // Attach click sound exclusively to tech tags
         document.querySelectorAll('.tech-tag').forEach(el => {
             el.addEventListener('mousedown', () => {
-                try { playHapticTick(); } catch(e) {}
+                try { playHapticTick(); } catch (e) { }
             });
         });
 

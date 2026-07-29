@@ -111,7 +111,8 @@
                         </p>
                         <p class="about-text">
                             I'm always happy to connect with fellow developers and tech enthusiasts.
-                            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about technology and
+                            Whether you're a friend, colleague, or potential collaborator, I'd love to chat about
+                            technology and
                             share ideas. Feel free to reach out!
                         </p>
                     </div>
@@ -196,7 +197,7 @@
     <section class="portfolio-section" id="portfolio">
         <div class="portfolio-inner">
             <div class="portfolio-header reveal">
-                <div class="slash-subtitle">/// featured work</div>
+                <!-- <div class="slash-subtitle">/// featured work</div> -->
                 <h2 class="section-heading">PROJECTS</h2>
             </div>
 
@@ -274,11 +275,13 @@
     <!-- ======================== NEW REFERENCE FOOTER ======================== -->
     <section class="footer-wrapper">
         <footer class="footer-card-redesign" id="contact">
-            
+
             <div class="footer-cta-section">
                 <div class="footer-cta-left">
                     <h2 class="footer-cta-title">READY TO BUILD?</h2>
-                    <div class="footer-cta-pretext cta-text-link">contact me at <a href="mailto:manisharavindh2007@gmail.com" class="email-link">manisharavindh.xyz@gmail.com</a></div>
+                    <div class="footer-cta-pretext cta-text-link">contact me at <a
+                            href="mailto:manisharavindh2007@gmail.com"
+                            class="email-link">manisharavindh.xyz@gmail.com</a></div>
                 </div>
                 <div class="footer-cta-right">
                     <ul class="footer-social-list-vertical">
@@ -442,24 +445,24 @@
         if (bentoReactive) {
             const charPool = ['/', '\\', '-', '_', '+', '=', '*', '#', 'X', 'O', '1', '0', '{', '}', '[', ']'];
             // Fill with enough characters to form a dense grid without overflowing
-            const totalChars = 80; 
+            const totalChars = 80;
             for (let i = 0; i < totalChars; i++) {
                 const charSpan = document.createElement('span');
                 charSpan.classList.add('bento-reactive-char');
                 charSpan.textContent = charPool[Math.floor(Math.random() * charPool.length)];
-                
+
                 charSpan.addEventListener('mouseenter', () => {
                     charSpan.textContent = charPool[Math.floor(Math.random() * charPool.length)];
                     charSpan.classList.add('active');
-                    try { playHapticTick(); } catch (e) {}
+                    try { playHapticTick(); } catch (e) { }
                 });
-                
+
                 charSpan.addEventListener('mouseleave', () => {
                     setTimeout(() => {
                         charSpan.classList.remove('active');
                     }, 600); // Wait before dropping the highlight style
                 });
-                
+
                 bentoReactive.appendChild(charSpan);
             }
         }
